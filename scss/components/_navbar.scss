@@ -6,6 +6,8 @@ nav {
   background-color: var(--dark-teal);
   height: 10vh;
   padding-inline: 50px;
+
+  position: fixed;
   //   padding-block: 50px;
   .logo {
     display: flex;

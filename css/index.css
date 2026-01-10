@@ -31,6 +31,7 @@ nav {
   background-color: var(--dark-teal);
   height: 10vh;
   padding-inline: 50px;
+  position: fixed;
 }
 nav .logo {
   display: flex;
@@ -87,4 +88,10 @@ nav ul a {
   nav ul {
     display: none;
   }
+}
+.blue-button {
+  color: black;
+  background-color: var(--dark-blue);
+  padding-inline: 30px;
+  padding-block: 20px;
 }
