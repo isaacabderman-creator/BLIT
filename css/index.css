@@ -32,6 +32,7 @@ nav {
   min-height: 10vh;
   min-width: 100%;
   padding-inline: 50px;
+  z-index: 10;
   position: fixed;
 }
 nav .logo {
@@ -80,7 +81,7 @@ nav ul a {
   margin-inline: 5px;
 }
 
-@media (width <= 900px) {
+@media (width <= 928px) {
   nav {
     padding-inline: 30px;
   }
@@ -94,9 +95,59 @@ nav ul a {
     display: none;
   }
 }
-.blue-button {
+.button {
   color: black;
+  font-weight: 600;
   background-color: var(--dark-blue);
   padding-inline: 24px;
   padding-block: 16px;
+}
+
+.white {
+  background-color: var(--primary-white);
+}
+
+header {
+  min-width: 100%;
+  min-height: 100dvh;
+  background-image: url("../images/server_room_1.png");
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+}
+header::before {
+  content: "";
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+header * {
+  z-index: 2;
+}
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 200px;
+  margin-bottom: 200px;
+}
+header .container .proof img {
+  background-color: #fff;
+  width: 50px;
+  aspect-ratio: 1/1;
+  border: 1px solid gray;
+  border-radius: 50%;
+}
+header .container h1 {
+  font-family: "Syne", sans-serif;
+  font-weight: 400;
+  font-size: var(--step-5);
+  color: var(--primary-white);
+}
+header .container a {
+  text-decoration: none;
 }

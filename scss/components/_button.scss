@@ -1,7 +1,11 @@
 // button call
-.blue-button {
+.button {
   color: black;
+  font-weight: 600;
   background-color: var(--dark-blue);
   padding-inline: 24px;
   padding-block: 16px;
+}
+.white {
+  background-color: var(--primary-white);
 }

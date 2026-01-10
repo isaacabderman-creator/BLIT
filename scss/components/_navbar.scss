@@ -7,6 +7,7 @@ nav {
   min-height: 10vh;
   min-width: 100%;
   padding-inline: 50px;
+  z-index: 10;
 
   position: fixed;
   //   padding-block: 50px;
@@ -56,7 +57,7 @@ nav {
     }
   }
 }
-@media (width <= 900px) {
+@media (width <= 928px) {
   nav {
     padding-inline: 30px;
     .logo {
