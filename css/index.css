@@ -52,7 +52,7 @@ nav .logo p {
   color: var(--primary-white);
   font-family: "Syne", sans-serif;
   font-size: var(--step-0);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 1.1;
 }
 nav .logo p span {
@@ -134,12 +134,13 @@ header .container {
   flex-direction: column;
   align-items: start;
   margin-left: 200px;
-  margin-bottom: 200px;
+  margin-bottom: 140px;
 }
 header .container .proof {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 20px;
 }
 header .container .proof img {
   background-color: #fff;
@@ -159,11 +160,14 @@ header .container h1 {
   font-size: var(--step-5);
   color: var(--primary-white);
   max-width: 700px;
+  line-height: -1px;
 }
 header .container p {
   color: var(--primary-grey);
+  font-size: var(--step-0);
   font-weight: 500;
   max-width: 60ch;
+  margin-bottom: 50px;
 }
 header .container .button-container {
   display: flex;
@@ -172,4 +176,11 @@ header .container .button-container {
 }
 header .container a {
   text-decoration: none;
+}
+
+@media (width <= 928px) {
+  header .container {
+    margin-left: 50px;
+    margin-bottom: 40px;
+  }
 }

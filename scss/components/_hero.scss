@@ -24,11 +24,14 @@ header {
     flex-direction: column;
     align-items: start;
     margin-left: 200px;
-    margin-bottom: 200px;
+    margin-bottom: 140px;
+
     .proof {
       display: flex;
       flex-direction: row;
       align-items: center;
+
+      margin: 20px;
       img {
         background-color: #fff;
         width: 50px;
@@ -48,11 +51,14 @@ header {
       font-size: var(--step-5);
       color: var(--primary-white);
       max-width: 700px;
+      line-height: -1px;
     }
     p {
       color: var(--primary-grey);
+      font-size: var(--step-0);
       font-weight: 500;
       max-width: 60ch;
+      margin-bottom: 50px;
     }
     .button-container {
       display: flex;
@@ -62,5 +68,11 @@ header {
     a {
       text-decoration: none;
     }
+  }
+}
+@media (width <= 928px) {
+  header .container {
+    margin-left: 50px;
+    margin-bottom: 40px;
   }
 }
