@@ -215,3 +215,180 @@ header .container .button-container {
 header .container a {
   text-decoration: none;
 }
+
+header {
+  min-width: 100%;
+  min-height: 100dvh;
+  background-image: url("../images/server_room_1.png");
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+}
+header::before {
+  content: "";
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+header * {
+  z-index: 2;
+}
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-inline: var(--space-l-4xl);
+  margin-block: var(--space-l-3xl);
+}
+header .container .proof {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: var(--space-2xs-xs);
+}
+header .container .proof .img-container {
+  position: relative; /* Essential for positioning the overlay */
+  width: var(--space-m-l);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-size: cover; /* Keeps the image within bounds if it's larger */
+  border: 1px solid rgba(176, 175, 175, 0.707); /* Optional: adds a subtle border */
+}
+header .container .proof .img-container:nth-of-type(1) {
+  background-image: url("../images/orange.png");
+}
+header .container .proof .img-container:nth-of-type(2) {
+  background-image: url("../images/yas.jpeg");
+  left: -18px;
+}
+header .container .proof .img-container:nth-of-type(3) {
+  background-image: url("../images/kanteco.jpeg");
+  left: -36px;
+}
+header .container .proof .img-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(176, 175, 175, 0.207); /* A subtle white background with transparency */
+  border-radius: 50%; /* Optional: adds rounded corners to the overlay */
+}
+header .container .proof p {
+  color: var(--secondary-white);
+  font-weight: 800;
+  margin: 0;
+  position: relative;
+  font-size: calc(var(--step-0) - 2px);
+  left: -22px;
+}
+header .container h1 {
+  font-family: "Syne", sans-serif;
+  font-weight: 400;
+  font-size: var(--step-5);
+  color: var(--primary-white);
+  max-width: 700px;
+  line-height: 1;
+  margin-bottom: var(--space-xs-s);
+}
+header .container p {
+  color: var(--primary-grey);
+  font-size: var(--step-0);
+  font-weight: 500;
+  max-width: 55ch;
+  margin-bottom: var(--space-xl-2xl);
+  text-justify: auto;
+  line-height: 1.5;
+}
+header .container .button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+header .container a {
+  text-decoration: none;
+}
+
+main > * {
+  padding-inline: var(--space-l-4xl);
+}
+
+section {
+  padding-block: 100px;
+}
+
+.partners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-teal);
+}
+.partners .title h2 {
+  text-align: center;
+}
+.partners .title p {
+  text-align: center;
+}
+.partners .wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  flex-grow: 1;
+  gap: 50px;
+}
+.partners .wrapper img {
+  height: 90px;
+}
+
+.title h2 {
+  font-family: "Syne", sans-serif;
+  font-weight: 400;
+  font-size: var(--step-4);
+  color: var(--primary-white);
+  max-width: 700px;
+  line-height: 1;
+  margin-bottom: var(--space-s-m);
+}
+.title p {
+  color: var(--primary-grey);
+  font-size: var(--step-0);
+  font-weight: 500;
+  max-width: 55ch;
+  margin-bottom: var(--space-xl-2xl);
+  text-justify: auto;
+  line-height: 1.5;
+}
+
+.services {
+  background-color: var(--dark-blue);
+}
+.services h2 {
+  max-width: 20ch;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.card-wrapper .card {
+  background: #000;
+  width: 100%;
+  height: 350px;
+  margin-right: 20px;
+}
