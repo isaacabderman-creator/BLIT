@@ -32,19 +32,49 @@ header {
       align-items: center;
       margin-bottom: var(--space-2xs-xs);
       // margin: 20px;
-      img {
+      .img-container {
+        position: relative; /* Essential for positioning the overlay */
         width: var(--space-m-l);
         aspect-ratio: 1/1;
         border-radius: 50%;
-        display: block;
-        position: relative;
+        background-size: cover; /* Keeps the image within bounds if it's larger */
+        border: 1px solid rgba(176, 175, 175, 0.707); /* Optional: adds a subtle border */
+        &:nth-of-type(1) {
+          background-image: url("../images/orange.png");
+        }
+        &:nth-of-type(2) {
+          background-image: url("../images/yas.jpeg");
+          left: -18px;
+        }
+        &:nth-of-type(3) {
+          background-image: url("../images/kanteco.jpeg");
+          left: -36px;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(
+            176,
+            175,
+            175,
+            0.207
+          ); /* A subtle white background with transparency */
+          // backdrop-filter: blur(1px) saturate(150%); /* The magic happens here! */
+          border-radius: 50%; /* Optional: adds rounded corners to the overlay */
+        }
       }
-
       p {
         color: var(--secondary-white);
         font-weight: 800;
         margin: 0;
-        margin-left: 15px;
+        position: relative;
+        font-size: calc(var(--step-0) - 2px);
+        left: -22px;
+        // margin-left: 15px;
       }
     }
     h1 {
@@ -53,16 +83,17 @@ header {
       font-size: var(--step-5);
       color: var(--primary-white);
       max-width: 700px;
-      line-height: -1;
+      line-height: 1;
       margin-bottom: var(--space-xs-s);
     }
     p {
       color: var(--primary-grey);
       font-size: var(--step-0);
       font-weight: 500;
-      max-width: 50ch;
+      max-width: 55ch;
       margin-bottom: var(--space-xl-2xl);
       text-justify: auto;
+      line-height: 1.5;
     }
     .button-container {
       display: flex;
