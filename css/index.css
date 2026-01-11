@@ -8,14 +8,23 @@
 
 /* @link https://utopia.fyi/type/calculator?c=360,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 :root {
-  --step--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
-  --step--1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
-  --step-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
-  --step-1: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
-  --step-2: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
-  --step-3: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
-  --step-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
-  --step-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
+  --step--2: clamp(0.7813rem, 0.7767rem + 0.0204vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9222rem + 0.068vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0944rem + 0.1361vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.298rem + 0.2313vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5384rem + 0.3626vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.8222rem + 0.5414vw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 2.1567rem + 0.7825vw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.5507rem + 1.1051vw, 3.8147rem);
+  --space-2xs-xs: clamp(0.5625rem, 0.4707rem + 0.4082vw, 0.9375rem);
+  --space-xs-s: clamp(0.875rem, 0.7832rem + 0.4082vw, 1.25rem);
+  --space-m-l: clamp(1.6875rem, 1.4885rem + 0.8844vw, 2.5rem);
+  --space-s-m: clamp(1.125rem, 0.9413rem + 0.8163vw, 1.875rem);
+  --space-xl-2xl: clamp(2.8125rem, 2.4298rem + 1.7007vw, 4.375rem);
+  /* Custom pairs */
+  --space-l-4xl: clamp(2.25rem, 0.0459rem + 9.7959vw, 11.25rem);
+  --space-l-3xl: clamp(2.25rem, 0.9643rem + 5.7143vw, 7.5rem);
+  --space-l-xl: clamp(2.25rem, 2.0357rem + 0.9524vw, 3.125rem);
   --vibrant-blue: hsl(204, 75%, 60%);
   --dark-blue: hsl(199, 70%, 36%);
   --primary-white: hsl(0, 0%, 97%);
@@ -99,9 +108,10 @@ nav ul a {
 .button {
   color: black;
   font-weight: 600;
+  font-size: calc(var(--step--1) + 1px);
   background-color: var(--dark-blue);
-  padding-inline: 24px;
-  padding-block: 16px;
+  padding-inline: calc(var(--space-s-m) + 0.2rem);
+  padding-block: calc(var(--space-2xs-xs) + 0.2rem);
 }
 
 .white {
@@ -124,7 +134,7 @@ header::before {
   min-height: 100%;
   min-width: 100%;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 header * {
   z-index: 2;
@@ -133,25 +143,26 @@ header .container {
   display: flex;
   flex-direction: column;
   align-items: start;
-  margin-left: 200px;
-  margin-bottom: 140px;
+  margin-inline: var(--space-l-4xl);
+  margin-block: var(--space-l-3xl);
 }
 header .container .proof {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 20px;
+  margin-bottom: var(--space-2xs-xs);
 }
 header .container .proof img {
-  background-color: #fff;
-  width: 50px;
+  width: var(--space-m-l);
   aspect-ratio: 1/1;
-  border: 1px solid gray;
   border-radius: 50%;
+  display: block;
+  position: relative;
 }
 header .container .proof p {
   color: var(--secondary-white);
   font-weight: 800;
+  margin: 0;
   margin-left: 15px;
 }
 header .container h1 {
@@ -160,14 +171,16 @@ header .container h1 {
   font-size: var(--step-5);
   color: var(--primary-white);
   max-width: 700px;
-  line-height: -1px;
+  line-height: -1;
+  margin-bottom: var(--space-xs-s);
 }
 header .container p {
   color: var(--primary-grey);
   font-size: var(--step-0);
   font-weight: 500;
-  max-width: 60ch;
-  margin-bottom: 50px;
+  max-width: 50ch;
+  margin-bottom: var(--space-xl-2xl);
+  text-justify: auto;
 }
 header .container .button-container {
   display: flex;
@@ -176,11 +189,4 @@ header .container .button-container {
 }
 header .container a {
   text-decoration: none;
-}
-
-@media (width <= 928px) {
-  header .container {
-    margin-left: 50px;
-    margin-bottom: 40px;
-  }
 }

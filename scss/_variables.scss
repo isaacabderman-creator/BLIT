@@ -2,14 +2,24 @@
 
 :root {
   // FONT SIZES FROM UTOPIA
-  --step--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
-  --step--1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
-  --step-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
-  --step-1: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
-  --step-2: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
-  --step-3: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
-  --step-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
-  --step-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
+  --step--2: clamp(0.7813rem, 0.7767rem + 0.0204vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9222rem + 0.068vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0944rem + 0.1361vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.298rem + 0.2313vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5384rem + 0.3626vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.8222rem + 0.5414vw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 2.1567rem + 0.7825vw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.5507rem + 1.1051vw, 3.8147rem);
+  // SPACE SYSTEM
+  --space-2xs-xs: clamp(0.5625rem, 0.4707rem + 0.4082vw, 0.9375rem);
+  --space-xs-s: clamp(0.875rem, 0.7832rem + 0.4082vw, 1.25rem);
+  --space-m-l: clamp(1.6875rem, 1.4885rem + 0.8844vw, 2.5rem);
+  --space-s-m: clamp(1.125rem, 0.9413rem + 0.8163vw, 1.875rem);
+  --space-xl-2xl: clamp(2.8125rem, 2.4298rem + 1.7007vw, 4.375rem);
+  /* Custom pairs */
+  --space-l-4xl: clamp(2.25rem, 0.0459rem + 9.7959vw, 11.25rem);
+  --space-l-3xl: clamp(2.25rem, 0.9643rem + 5.7143vw, 7.5rem);
+  --space-l-xl: clamp(2.25rem, 2.0357rem + 0.9524vw, 3.125rem);
 
   // COLOR PALETTE
   --vibrant-blue: hsl(204, 75%, 60%);

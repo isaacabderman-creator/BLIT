@@ -2,9 +2,10 @@
 .button {
   color: black;
   font-weight: 600;
+  font-size: calc(var(--step--1) + 1px);
   background-color: var(--dark-blue);
-  padding-inline: 24px;
-  padding-block: 16px;
+  padding-inline: calc(var(--space-s-m) + 0.2rem);
+  padding-block: calc(var(--space-2xs-xs) + 0.2rem);
 }
 .white {
   background-color: var(--primary-white);
