@@ -26,10 +26,11 @@
   --space-l-3xl: clamp(2.25rem, 0.9643rem + 5.7143vw, 7.5rem);
   --space-l-xl: clamp(2.25rem, 2.0357rem + 0.9524vw, 3.125rem);
   --vibrant-blue: hsl(204, 75%, 60%);
-  --dark-blue: hsl(199, 70%, 36%);
+  --dark-blue: hsl(199, 85%, 30%);
   --primary-white: hsl(0, 0%, 97%);
   --secondary-white: hsl(180, 1%, 75%);
   --primary-grey: hsl(180, 1%, 94%);
+  --vibrant-teal: hsl(180, 70%, 50%);
   --dark-teal: #0c3139;
 }
 
@@ -392,4 +393,74 @@ section {
   width: 100%;
   height: 350px;
   margin-right: 20px;
+}
+
+.choice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--dark-blue);
+}
+.choice .icon {
+  width: 100%;
+  height: 500px;
+  /* Set the size of your "square" */
+  /* Pick your uniform color */
+  background-color: #0b2739;
+  /* Apply the SVG as a mask */
+  -webkit-mask-image: url("../images/key.svg");
+  mask-image: url("../images/key.svg");
+  /* Ensure the icon centers and scales correctly */
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+.choice .game-changer h2 {
+  font-family: "Syne", sans-serif;
+  font-weight: 400;
+  font-size: var(--step-4);
+  color: var(--primary-white);
+  max-width: 600px;
+  line-height: 1;
+  margin-bottom: var(--space-m-l);
+}
+.choice .game-changer ul li {
+  list-style: none;
+  display: flex;
+  gap: 16px; /* Space between icon and text */
+}
+.choice .game-changer ul li::before {
+  content: "";
+  flex-shrink: 0; /* Prevents the icon from squishing */
+  width: 2em; /* Sizes the icon relative to font size */
+  height: 2em;
+  /* Aligning with the H3: adjust 'margin-top' if your H3 has default margins */
+  /* 1. Define the "stencil" (your icon) */
+  -webkit-mask-image: url("../images/angle-right.svg");
+  mask-image: url("../images/angle-right.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  /* 2. Define the color you want */
+  background-color: var(--vibrant-teal); /* Change this to any color! */
+}
+.choice .game-changer ul h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: var(--step-2);
+  color: var(--primary-white);
+  max-width: 50ch;
+  line-height: 1.1;
+  margin-bottom: var(--space-xs-s);
+}
+.choice .game-changer ul p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: var(--step-0);
+  color: var(--secondary-white);
+  max-width: 40ch;
+  line-height: 1.2;
+  margin-bottom: var(--space-s-m);
 }

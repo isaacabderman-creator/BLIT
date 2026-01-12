@@ -64,12 +64,6 @@ section {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-// @media (width <= 928px) {
-//   .inline {
-//     flex-direction: column;
-//     justify-content: start;
-//   }
-// }
 .card-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
