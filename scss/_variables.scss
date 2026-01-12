@@ -20,6 +20,8 @@
   --space-l-4xl: clamp(2.25rem, 0.0459rem + 9.7959vw, 11.25rem);
   --space-l-3xl: clamp(2.25rem, 0.9643rem + 5.7143vw, 7.5rem);
   --space-l-xl: clamp(2.25rem, 2.0357rem + 0.9524vw, 3.125rem);
+  --space-5xl-6xl: clamp(16.875rem, 13.5511rem + 14.7727vw, 25rem);
+  --space-4xl-5xl: clamp(11.25rem, 8.1818rem + 13.6364vw, 18.75rem);
 
   // COLOR PALETTE
   --vibrant-blue: hsl(204, 75%, 60%);
@@ -28,6 +30,6 @@
   --primary-white: hsl(0, 0%, 97%);
   --secondary-white: hsl(180, 1%, 75%);
   --primary-grey: hsl(180, 1%, 94%);
-  --vibrant-teal: hsl(180, 70%, 50%);
+  --vibrant-teal: #0b2739;
   --dark-teal: #0c3139;
 }
