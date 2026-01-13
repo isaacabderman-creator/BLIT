@@ -27,6 +27,7 @@
   --space-l-xl: clamp(2.25rem, 2.0357rem + 0.9524vw, 3.125rem);
   --space-5xl-6xl: clamp(16.875rem, 13.5511rem + 14.7727vw, 25rem);
   --space-4xl-5xl: clamp(11.25rem, 8.1818rem + 13.6364vw, 18.75rem);
+  --space-l-2xl: clamp(2.25rem, 1.5856rem + 2.953vw, 5rem);
   --vibrant-blue: hsl(204, 75%, 60%);
   --dark-blue: hsl(199, 85%, 30%);
   --primary-white: hsl(0, 0%, 97%);
@@ -400,6 +401,7 @@ section {
   background-size: cover;
   background-position: center center;
   position: relative;
+  border-radius: 12px;
 }
 .card-wrapper .card:nth-of-type(1) {
   background-image: url("../images/rack_1.jpg");
@@ -423,6 +425,8 @@ section {
   padding-block: 25px 30px;
   padding-inline: 40px;
   z-index: 2;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 .legend h3 {
   font-family: "Syne", sans-serif;
@@ -492,24 +496,6 @@ section {
   mask-repeat: no-repeat;
   background-color: var(--vibrant-teal);
 }
-.choice .game-changer ul h3 {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: var(--step-2);
-  color: var(--primary-white);
-  max-width: 50ch;
-  line-height: 1.1;
-  margin-bottom: var(--space-xs-s);
-}
-.choice .game-changer ul p {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: var(--step-0);
-  color: var(--secondary-white);
-  max-width: 40ch;
-  line-height: 1.2;
-  margin-bottom: var(--space-s-m);
-}
 
 .square-btn {
   display: flex;
@@ -517,11 +503,12 @@ section {
   justify-content: center;
   width: calc(var(--step-2) * 3);
   aspect-ratio: 1/1;
-  background-color: #bebfbf; /* Button Background Color */
+  background-color: transparent; /* Button Background Color */
+  border: 5px solid var(--primary-white);
   transition: background-color 0.2s ease;
 }
 .square-btn .icon-mask {
-  background-color: black;
+  background-color: var(--primary-white);
 }
 
 /* 4. The Mask (The Magic Part) */
@@ -552,4 +539,328 @@ section {
 /* Example: Change icon color on hover (if you want) */
 .square-btn:hover .icon-mask {
   background-color: #ffcc00; /* Icon turns yellow on hover */
+}
+
+.work {
+  background-color: var(--dark-teal);
+  display: grid;
+  gap: 2rem; /* Adds space between grid items */
+  /* MOBILE LAYOUT (Default): Stacked vertically */
+  grid-template-areas: "title" "image" "content";
+}
+.work .square-btn {
+  display: none;
+}
+.work .content p {
+  max-width: 50ch;
+  margin-bottom: 0;
+}
+
+/* TABLET/DESKTOP LAYOUT */
+@media (min-width: 768px) {
+  .work {
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    /* Left col: title
+       Right col: image (top), content (bottom) 
+    */
+    grid-template-areas: "title image" ". content";
+  }
+  .work .square-btn {
+    display: flex;
+  }
+}
+/* --- ASSIGNING GRID AREAS --- */
+.work-title {
+  grid-area: title;
+  /* Flexbox to center the content inside the title area */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers vertically relative to image+content */
+  align-items: center; /* Aligns text to the left */
+}
+.work-title h2 {
+  font-family: "Syne", sans-serif;
+  font-weight: 400;
+  font-size: var(--step-4);
+  color: var(--primary-white);
+  max-width: 600px;
+  line-height: 1;
+  margin-bottom: calc(var(--space-l-2xl));
+}
+
+.work-img {
+  grid-area: image;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: var(--space-s-m);
+}
+
+.content {
+  grid-area: content;
+}
+.content h3 {
+  font-family: "Syne", sans-serif;
+  font-weight: 400;
+  font-size: var(--step-2);
+  color: var(--primary-white);
+  max-width: 50ch;
+  line-height: 1.1;
+  margin-bottom: var(--space-xs-s);
+  margin-top: 0; /* Resetting default margin */
+}
+.content p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: var(--step-0);
+  color: var(--secondary-white);
+  max-width: 40ch;
+  line-height: 1.5;
+  margin-bottom: var(--space-s-m);
+  text-align: justify;
+}
+
+.container-1 {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.cta-section {
+  background-color: #bebfbf;
+  padding: 80px 0;
+  font-family: system-ui, -apple-system, sans-serif; /* Fallback font */
+}
+
+.cta-header {
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  color: #111;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #444;
+  margin: 0;
+}
+
+/* --- Card & Grid Layout --- */
+.cta-form-card {
+  background-color: var(--primary-white);
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  /* The Magic: Side by Side Layout */
+  display: grid;
+  grid-template-columns: 1.2fr auto 1fr; /* Left | Divider | Right */
+  gap: 3rem;
+  align-items: start;
+}
+
+/* --- Left Column (Email) --- */
+.form-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input[type=email] {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #e1e1e1;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Ensures padding doesn't break width */
+}
+
+input[type=email]:focus {
+  outline: none;
+  border-color: var(--dark-teal);
+}
+
+.btn-primary {
+  background-color: var(--dark-teal);
+  color: var(--primary-white);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start; /* Prevents button from stretching full width */
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Divider Line --- */
+.divider {
+  width: 1px;
+  background-color: #e1e1e1;
+  height: 100%;
+  min-height: 200px;
+}
+
+/* --- Right Column (Services) --- */
+.section-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  color: var(--text-main);
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.checkbox-item:hover {
+  background-color: #f5f5f5;
+}
+
+.label-text {
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+/* Custom Checkbox Styling */
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--dark-teal);
+  cursor: pointer;
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+  .cta-form-card {
+    grid-template-columns: 1fr; /* Stack into 1 column */
+    gap: 2rem;
+    padding: 2rem;
+  }
+  .divider {
+    display: none; /* Hide vertical line on mobile */
+  }
+  .btn-primary {
+    width: 100%; /* Full width button on mobile */
+  }
+  .title {
+    font-size: 2rem;
+  }
+}
+/* --- Footer --- */
+.main-footer {
+  background-color: #0b0b0b;
+  color: var(--primary-white);
+  padding: 60px 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.logo-box {
+  border: 2px solid #5fb5c1;
+  padding: 5px 10px;
+  font-family: var(--step-1);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #5fb5c1;
+}
+
+.brand-name {
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.tagline {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.address {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.footer-heading {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .cta-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
 }
