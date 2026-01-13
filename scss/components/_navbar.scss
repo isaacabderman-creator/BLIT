@@ -4,6 +4,10 @@ nav {
   align-items: center;
   justify-content: space-between;
   background-color: var(--dark-teal);
+  background: rgba(14, 26, 37, 0.75);
+  backdrop-filter: blur(12px);
+  /* Adds a very subtle highlight at the top of the bar */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   min-height: 10vh;
   min-width: 100%;
   padding-inline: 50px;
@@ -52,8 +56,8 @@ nav {
       color: white;
       font-family: "Inter", sans-serif;
       font-weight: 600;
-      padding: 15px;
-      margin-inline: 5px;
+      padding: 20px;
+      margin-inline: 10px;
     }
   }
 }
