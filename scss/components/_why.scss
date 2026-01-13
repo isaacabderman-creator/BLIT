@@ -87,3 +87,49 @@
     }
   }
 }
+.square-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--step-2) * 3);
+  aspect-ratio: 1/1;
+  background-color: #bebfbf; /* Button Background Color */
+  transition: background-color 0.2s ease;
+  .icon-mask {
+    background-color: black;
+  }
+}
+
+/* 4. The Mask (The Magic Part) */
+.icon-mask {
+  display: block;
+  width: calc(var(--step-2) * 2); /* Size of the icon inside the button */
+  aspect-ratio: 1/1;
+
+  /* IMPORTANT: This color becomes the Icon's fill color */
+  background-color: #ffffff;
+
+  /* Define the mask */
+  -webkit-mask-image: url("../images/angle-right.svg");
+  mask-image: url("../images/angle-right.svg");
+
+  /* Ensure icon fits and centers */
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  transition: background-color 0.2s ease;
+}
+
+/* Optional: Hover Effects */
+.square-btn:hover {
+  background-color: #0056b3; /* Darker button on hover */
+}
+
+/* Example: Change icon color on hover (if you want) */
+.square-btn:hover .icon-mask {
+  background-color: #ffcc00; /* Icon turns yellow on hover */
+}

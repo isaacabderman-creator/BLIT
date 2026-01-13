@@ -1,12 +1,14 @@
 // button call
 .button {
-  color: black;
+  color: white;
   font-weight: 600;
   font-size: calc(var(--step--1) + 1px);
-  background-color: var(--dark-blue);
+  background-color: hsl(199, 100%, 30%);
   padding-inline: calc(var(--space-s-m) + 0.2rem);
   padding-block: calc(var(--space-2xs-xs) + 0.2rem);
 }
 .white {
-  background-color: var(--primary-white);
+  background-color: transparent;
+  border: 1px solid white;
+  color: #fff;
 }

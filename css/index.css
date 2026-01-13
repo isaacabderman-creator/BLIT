@@ -109,16 +109,18 @@ nav ul a {
   }
 }
 .button {
-  color: black;
+  color: white;
   font-weight: 600;
   font-size: calc(var(--step--1) + 1px);
-  background-color: var(--dark-blue);
+  background-color: hsl(199, 100%, 30%);
   padding-inline: calc(var(--space-s-m) + 0.2rem);
   padding-block: calc(var(--space-2xs-xs) + 0.2rem);
 }
 
 .white {
-  background-color: var(--primary-white);
+  background-color: transparent;
+  border: 1px solid white;
+  color: #fff;
 }
 
 header {
@@ -395,6 +397,38 @@ section {
   width: 100%;
   height: 350px;
   margin-right: 20px;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+.card-wrapper .card:nth-of-type(1) {
+  background-image: url("../images/rack_1.jpg");
+}
+.card-wrapper .card:nth-of-type(2) {
+  background-image: url("../images/phone_1.jpg");
+}
+.card-wrapper .card:nth-of-type(3) {
+  background-image: url("../images/business_event_1.jpg");
+}
+
+.legend {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: var(--vibrant-teal);
+  padding-block: 25px 30px;
+  padding-inline: 40px;
+  z-index: 2;
+}
+.legend h3 {
+  font-family: "Syne", sans-serif;
+  font-weight: normal;
+  font-size: var(--step-1);
+  color: var(--primary-white);
 }
 
 .choice {
@@ -475,4 +509,47 @@ section {
   max-width: 40ch;
   line-height: 1.2;
   margin-bottom: var(--space-s-m);
+}
+
+.square-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--step-2) * 3);
+  aspect-ratio: 1/1;
+  background-color: #bebfbf; /* Button Background Color */
+  transition: background-color 0.2s ease;
+}
+.square-btn .icon-mask {
+  background-color: black;
+}
+
+/* 4. The Mask (The Magic Part) */
+.icon-mask {
+  display: block;
+  width: calc(var(--step-2) * 2); /* Size of the icon inside the button */
+  aspect-ratio: 1/1;
+  /* IMPORTANT: This color becomes the Icon's fill color */
+  background-color: #ffffff;
+  /* Define the mask */
+  -webkit-mask-image: url("../images/angle-right.svg");
+  mask-image: url("../images/angle-right.svg");
+  /* Ensure icon fits and centers */
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  transition: background-color 0.2s ease;
+}
+
+/* Optional: Hover Effects */
+.square-btn:hover {
+  background-color: #0056b3; /* Darker button on hover */
+}
+
+/* Example: Change icon color on hover (if you want) */
+.square-btn:hover .icon-mask {
+  background-color: #ffcc00; /* Icon turns yellow on hover */
 }
