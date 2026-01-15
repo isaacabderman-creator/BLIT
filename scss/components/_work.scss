@@ -1,0 +1,93 @@
+.work {
+  background-color: var(--dark-teal);
+  display: grid;
+  gap: 2rem; /* Adds space between grid items */
+
+  /* MOBILE LAYOUT (Default): Stacked vertically */
+  grid-template-areas:
+    "title"
+    "image"
+    "content";
+  .square-btn {
+    display: none;
+  }
+  .content p {
+    max-width: 50ch;
+    margin-bottom: 0;
+  }
+}
+
+/* TABLET/DESKTOP LAYOUT */
+@media (min-width: 768px) {
+  .work {
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+
+    /* Left col: title
+       Right col: image (top), content (bottom) 
+    */
+    grid-template-areas:
+      "title image"
+      ". content";
+    .square-btn {
+      display: flex;
+    }
+  }
+}
+
+/* --- ASSIGNING GRID AREAS --- */
+
+.work-title {
+  grid-area: title;
+
+  /* Flexbox to center the content inside the title area */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers vertically relative to image+content */
+  align-items: center; /* Aligns text to the left */
+
+  h2 {
+    font-family: "Syne", sans-serif;
+    font-weight: 400;
+    font-size: var(--step-4);
+    color: var(--primary-white);
+    max-width: 600px;
+    line-height: 1;
+    margin-bottom: calc(var(--space-l-2xl));
+  }
+}
+
+.work-img {
+  grid-area: image;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: var(--space-s-m);
+}
+
+.content {
+  grid-area: content;
+
+  h3 {
+    font-family: "Syne", sans-serif;
+    font-weight: 400;
+    font-size: var(--step-2);
+    color: var(--primary-white);
+    max-width: 50ch;
+    line-height: 1.1;
+    margin-bottom: var(--space-xs-s);
+    margin-top: 0; /* Resetting default margin */
+  }
+
+  p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: var(--step-0);
+    color: var(--secondary-white);
+    max-width: 40ch;
+    line-height: 1.5;
+    margin-bottom: var(--space-s-m);
+    text-align: justify;
+  }
+}

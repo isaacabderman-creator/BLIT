@@ -1,0 +1,502 @@
+/* --- Reset & Global Styles --- */
+:root {
+  --primary-blue: #008cba;
+  --primary-gradient: linear-gradient(90deg, #005587 0%, #0099cc 100%);
+  --dark-navy: #101c2c; /* Based on footer of image_1 */
+  --dark-text: #222222;
+  --light-text: #666666;
+  --bg-light-grey: #f8f9fa;
+  --white: #ffffff;
+  --section-spacing: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Utilities --- */
+.highlight {
+  color: var(--primary-blue);
+}
+.text-link {
+  color: var(--primary-blue);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.section-label {
+  display: inline-block;
+  color: var(--primary-blue);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 25px;
+}
+
+/* Add the little icon before the label based on image_0 */
+.section-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: var(--primary-blue);
+  /* Simple shape to mimic the icon */
+  clip-path: polygon(0% 0%, 70% 0%, 100% 50%, 70% 100%, 0% 100%);
+  opacity: 0.8;
+}
+
+.center-label {
+  display: block;
+  text-align: center;
+  padding-left: 0;
+}
+.center-label::before {
+  display: none;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: var(--white);
+  border: none;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 12px rgba(0, 140, 186, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-white {
+  background-color: var(--white);
+  color: var(--primary-blue);
+  border: 2px solid var(--white);
+}
+
+.btn-white:hover {
+  background-color: transparent;
+  color: var(--white);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--white);
+  color: var(--primary-blue);
+}
+
+/* --- Header --- */
+header {
+  background-color: var(--white);
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: var(--dark-navy);
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+nav a.active,
+nav a:hover {
+  color: var(--primary-blue);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  text-align: center;
+  padding: 100px 0 60px;
+  background-color: var(--white);
+}
+
+.hero-section p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* --- Process Section --- */
+.process-section {
+  padding: var(--section-spacing) 0;
+  background-color: var(--bg-light-grey);
+  text-align: center;
+}
+
+.process-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.process-card {
+  background: var(--white);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-wrapper {
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.icon-box {
+  width: 70px;
+  height: 70px;
+  background-color: #e6f4f9; /* Light blue bg for icon */
+  color: var(--primary-blue);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* --- Solution Sections (Shared Styles) --- */
+.solution-section {
+  padding: var(--section-spacing) 0;
+  background-color: var(--white);
+}
+
+.split-layout {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* Class to reverse order for the middle section */
+.img-right .split-layout {
+  flex-direction: row-reverse;
+}
+
+.image-col,
+.content-col {
+  flex: 1;
+}
+
+/* Feature Lists in solutions */
+.feature-list {
+  margin-bottom: 2rem;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 0.75rem;
+  color: var(--dark-text);
+}
+
+/* Custom bullet point based on image_1 style */
+.feature-list li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
+  top: 2px;
+}
+
+/* Image Placeholders */
+.image-placeholder {
+  background-color: #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.server-img {
+  height: 400px;
+}
+.line-art-container {
+  height: 400px;
+  border-radius: 12px;
+}
+.sub-img-1,
+.sub-img-2 {
+  height: 250px;
+}
+
+/* Specific Styles for Solution 1 (Reliability Badge) */
+.relative-pos {
+  position: relative;
+}
+
+.reliability-badge {
+  position: absolute;
+  bottom: 30px;
+  right: -30px;
+  background-color: var(--white);
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 2;
+}
+
+.check-icon {
+  width: 30px;
+  height: 30px;
+  background: var(--primary-gradient);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Specific Styles for Solution 3 (Multi-image) */
+.multi-image-col {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.multi-image-col > div {
+  flex: 1;
+}
+.sub-img-1 {
+  margin-top: 40px;
+} /* Offset effect */
+
+/* --- CTA Section --- */
+.cta-section {
+  background-color: var(--dark-navy); /* Fallback */
+  background: linear-gradient(
+    135deg,
+    var(--dark-navy) 0%,
+    #004e7a 100%
+  ); /* Styled like image_1 bottom area */
+  padding: 100px 0;
+  text-align: center;
+  color: var(--white);
+}
+
+.cta-content h2 {
+  color: var(--white);
+  font-size: 2.5rem;
+}
+
+.cta-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--dark-navy);
+  color: #ccc;
+  padding: 80px 0 0;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col {
+  flex: 1;
+}
+
+.branding-col {
+  flex: 1.5;
+}
+
+.footer-logo {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-col h4 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-col ul li a:hover {
+  color: var(--primary-blue);
+}
+
+.copyright {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.copyright p {
+  margin-bottom: 0;
+  color: #999;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 968px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .process-grid {
+    flex-direction: column;
+  }
+  .split-layout {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  /* Ensure the reverse layout also stacks correctly on mobile */
+  .reverse-mobile {
+    flex-direction: column !important;
+  }
+  .reliability-badge {
+    right: 0;
+    bottom: -20px;
+  }
+  .image-placeholder {
+    width: 100%;
+  }
+  .server-img,
+  .line-art-container {
+    height: 300px;
+  }
+  .nav-btn {
+    display: none;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .cta-buttons {
+    flex-direction: column;
+  }
+  .footer-grid {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .copyright {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
