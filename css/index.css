@@ -29,12 +29,13 @@
   --space-4xl-5xl: clamp(11.25rem, 8.1818rem + 13.6364vw, 18.75rem);
   --space-l-2xl: clamp(2.25rem, 1.5856rem + 2.953vw, 5rem);
   --vibrant-blue: hsl(204, 75%, 60%);
-  --dark-blue: hsl(199, 85%, 30%);
+  --dark-blue: hsl(199, 79.8%, 19.4%);
   --primary-white: hsl(0, 0%, 97%);
   --secondary-white: hsl(180, 1%, 75%);
   --primary-grey: hsl(180, 1%, 94%);
   --vibrant-teal: #0b2739;
   --dark-teal: #0c3139;
+  --primary-gradient: linear-gradient(90deg, #005587 0%, #0099cc 100%);
 }
 
 nav {
@@ -114,6 +115,10 @@ nav ul a {
     display: none;
   }
 }
+.active {
+  display: none;
+}
+
 .button {
   color: white;
   font-weight: 600;
@@ -121,110 +126,25 @@ nav ul a {
   background-color: hsl(199, 100%, 30%);
   padding-inline: calc(var(--space-s-m) + 0.2rem);
   padding-block: calc(var(--space-2xs-xs) + 0.2rem);
+  text-decoration: none;
 }
 
 .white {
   background-color: transparent;
   border: 1px solid white;
   color: #fff;
+  padding-inline: calc(var(--space-s-m) + 0.2rem - 2px);
+  padding-block: calc(var(--space-2xs-xs) + 0.2rem - 2px);
 }
 
-header {
-  min-width: 100%;
-  min-height: 100dvh;
-  background-image: url("../images/server_room_1.png");
-  background-position: center center;
-  background-size: cover;
-  position: relative;
+.teal {
+  background-color: var(--dark-teal);
+}
+
+.cta-buttons {
   display: flex;
-  align-items: end;
-  justify-content: start;
-}
-header::before {
-  content: "";
-  min-height: 100%;
-  min-width: 100%;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-header * {
-  z-index: 2;
-}
-header .container {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  margin-inline: var(--space-l-4xl);
-  margin-block: var(--space-l-3xl);
-}
-header .container .proof {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: var(--space-2xs-xs);
-}
-header .container .proof .img-container {
-  position: relative; /* Essential for positioning the overlay */
-  width: var(--space-m-l);
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background-size: cover; /* Keeps the image within bounds if it's larger */
-  border: 1px solid rgba(176, 175, 175, 0.707); /* Optional: adds a subtle border */
-}
-header .container .proof .img-container:nth-of-type(1) {
-  background-image: url("../images/orange.png");
-}
-header .container .proof .img-container:nth-of-type(2) {
-  background-image: url("../images/yas.jpeg");
-  left: -18px;
-}
-header .container .proof .img-container:nth-of-type(3) {
-  background-image: url("../images/kanteco.jpeg");
-  left: -36px;
-}
-header .container .proof .img-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(176, 175, 175, 0.207); /* A subtle white background with transparency */
-  border-radius: 50%; /* Optional: adds rounded corners to the overlay */
-}
-header .container .proof p {
-  color: var(--secondary-white);
-  font-weight: 800;
-  margin: 0;
-  position: relative;
-  font-size: calc(var(--step-0) - 2px);
-  left: -22px;
-}
-header .container h1 {
-  font-family: "Syne", sans-serif;
-  font-weight: 400;
-  font-size: var(--step-5);
-  color: var(--primary-white);
-  max-width: 700px;
-  line-height: 1;
-  margin-bottom: var(--space-xs-s);
-}
-header .container p {
-  color: var(--primary-grey);
-  font-size: var(--step-0);
-  font-weight: 500;
-  max-width: 55ch;
-  margin-bottom: var(--space-xl-2xl);
-  text-justify: auto;
-  line-height: 1.5;
-}
-header .container .button-container {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-header .container a {
-  text-decoration: none;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 header {
@@ -376,6 +296,7 @@ section {
   max-width: 55ch;
   margin-bottom: var(--space-xl-2xl);
   text-justify: auto;
+  color: var(--primary-white);
   line-height: 1.5;
 }
 
@@ -453,6 +374,7 @@ section {
   aspect-ratio: 1/1;
   background: transparent;
   border: 20px solid #0b2739;
+  border-radius: 12px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -511,6 +433,8 @@ section {
   background-color: transparent; /* Button Background Color */
   border: 5px solid var(--primary-white);
   transition: background-color 0.2s ease;
+  border-radius: 12px;
+  padding-left: 10px;
 }
 .square-btn .icon-mask {
   background-color: var(--primary-white);
@@ -534,16 +458,6 @@ section {
   -webkit-mask-position: center;
   mask-position: center;
   transition: background-color 0.2s ease;
-}
-
-/* Optional: Hover Effects */
-.square-btn:hover {
-  background-color: #0056b3; /* Darker button on hover */
-}
-
-/* Example: Change icon color on hover (if you want) */
-.square-btn:hover .icon-mask {
-  background-color: #ffcc00; /* Icon turns yellow on hover */
 }
 
 .work {
@@ -627,173 +541,41 @@ section {
   text-align: justify;
 }
 
-.container-1 {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
+/* --- CTA Section --- */
 .cta-section {
-  background-color: #bebfbf;
-  padding: 80px 0;
-  font-family: system-ui, -apple-system, sans-serif; /* Fallback font */
+  background-color: #0b0b0b;
+  padding: 70px;
 }
 
-.cta-header {
-  margin-bottom: 2rem;
-  max-width: 600px;
-}
-
-.title {
-  font-size: 2.5rem;
-  margin: 0 0 0.5rem 0;
-  color: #111;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: #444;
-  margin: 0;
-}
-
-/* --- Card & Grid Layout --- */
-.cta-form-card {
-  background-color: var(--primary-white);
-  padding: 3rem;
+.float {
+  background-color: #0b0b0b; /* Fallback */
+  border: 3px solid var(--dark-teal);
+  padding: 100px 0;
+  text-align: center;
+  color: var(--white);
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  /* The Magic: Side by Side Layout */
-  display: grid;
-  grid-template-columns: 1.2fr auto 1fr; /* Left | Divider | Right */
-  gap: 3rem;
-  align-items: start;
 }
 
-/* --- Left Column (Email) --- */
-.form-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.input-group {
-  margin-bottom: 1.5rem;
-}
-
-.input-group label {
-  display: block;
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  color: var(--text-main);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-input[type=email] {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1rem;
-  border: 2px solid #e1e1e1;
-  border-radius: 6px;
-  transition: border-color 0.3s ease;
-  box-sizing: border-box; /* Ensures padding doesn't break width */
-}
-
-input[type=email]:focus {
-  outline: none;
-  border-color: var(--dark-teal);
-}
-
-.btn-primary {
-  background-color: var(--dark-teal);
+.cta-content h2 {
+  color: var(--white);
+  font-size: var(--step-4);
+  font-family: "Syne", sans-serif;
+  font-weight: normal;
   color: var(--primary-white);
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  align-self: flex-start; /* Prevents button from stretching full width */
 }
 
-.btn-primary:hover {
-  background-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.cta-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--step-0);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
 }
 
-/* --- Divider Line --- */
-.divider {
-  width: 1px;
-  background-color: #e1e1e1;
-  height: 100%;
-  min-height: 200px;
-}
-
-/* --- Right Column (Services) --- */
-.section-label {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 0 0 1.5rem 0;
-  color: var(--text-main);
-}
-
-.checkbox-group {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.checkbox-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 6px;
-  transition: background 0.2s;
-}
-
-.checkbox-item:hover {
-  background-color: #f5f5f5;
-}
-
-.label-text {
-  font-size: 1rem;
-  color: var(--text-main);
-}
-
-/* Custom Checkbox Styling */
-input[type=checkbox] {
-  width: 20px;
-  height: 20px;
-  accent-color: var(--dark-teal);
-  cursor: pointer;
-}
-
-/* --- Responsive (Mobile) --- */
-@media (max-width: 768px) {
-  .cta-form-card {
-    grid-template-columns: 1fr; /* Stack into 1 column */
-    gap: 2rem;
-    padding: 2rem;
-  }
-  .divider {
-    display: none; /* Hide vertical line on mobile */
-  }
-  .btn-primary {
-    width: 100%; /* Full width button on mobile */
-  }
-  .title {
-    font-size: 2rem;
-  }
-}
 /* --- Footer --- */
 .main-footer {
   background-color: #0b0b0b;
   color: var(--primary-white);
-  padding: 60px 0;
+  padding: 100px;
 }
 
 .footer-grid {

@@ -10,6 +10,7 @@
     aspect-ratio: 1/1;
     background: transparent;
     border: 20px solid #0b2739;
+    border-radius: 12px;
 
     display: flex;
     flex-direction: row;
@@ -78,6 +79,8 @@
   background-color: transparent; /* Button Background Color */
   border: 5px solid var(--primary-white);
   transition: background-color 0.2s ease;
+  border-radius: 12px;
+  padding-left: 10px;
   .icon-mask {
     background-color: var(--primary-white);
   }
@@ -105,14 +108,4 @@
   mask-position: center;
 
   transition: background-color 0.2s ease;
-}
-
-/* Optional: Hover Effects */
-.square-btn:hover {
-  background-color: #0056b3; /* Darker button on hover */
-}
-
-/* Example: Change icon color on hover (if you want) */
-.square-btn:hover .icon-mask {
-  background-color: #ffcc00; /* Icon turns yellow on hover */
 }

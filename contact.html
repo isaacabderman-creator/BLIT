@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact & Consultation - BLIT</title>
+    <style>
+      /* --- CSS Styles --- */
+      :root {
+        /* Color Palette - Light & Colorful Mode */
+        --primary-teal: #004d4f; /* Deep teal for primary buttons and footer */
+        --bright-cyan: #00b2ff; /* Bright cyan for accents and icons */
+        --page-bg: #f4f7fa; /* Light gray-blue background for the section */
+        --white: #ffffff; /* Main container background */
+        --text-dark: #121826; /* Dark text for headings */
+        --text-gray: #5e6b7e; /* Gray text for body paragraphs and labels */
+        --input-border: #dce3ec; /* Subtle border for inputs */
+        --shadow-form: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft shadow for the form container */
+        --font-stack: "Arial", sans-serif; /* Keeping it simple as requested */
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: var(--font-stack);
+      }
+
+      body {
+        background-color: var(--page-bg);
+        color: var(--text-gray);
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Button Styles */
+      .btn {
+        padding: 12px 28px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-block;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-primary {
+        background-color: var(--bright-cyan);
+        color: var(--white);
+      }
+      .btn-primary:hover {
+        background-color: #0095d6;
+      }
+
+      .btn-submit {
+        background-color: var(--primary-teal);
+        color: var(--white);
+        width: 100%;
+        font-size: 1.1rem;
+      }
+      .btn-submit:hover {
+        background-color: #00383a;
+      }
+
+      /* --- Header (Placeholder for context) --- */
+      .header {
+        padding: 20px 0;
+        background-color: var(--white);
+        border-bottom: 1px solid var(--input-border);
+      }
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      /* Simple text logo for placeholder */
+      .logo-text {
+        font-size: 24px;
+        font-weight: 900;
+        color: var(--text-dark);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+      .logo-icon {
+        height: 24px;
+        width: 24px;
+        background-color: var(--bright-cyan);
+        margin-right: 8px;
+        border-radius: 4px;
+      }
+      .nav a {
+        color: var(--text-dark);
+        text-decoration: none;
+        margin-left: 30px;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      .nav a.btn {
+        margin-left: 30px;
+      }
+
+      /* --- Contact Section Styles --- */
+      .contact-section {
+        padding: 80px 0;
+        background-color: var(--page-bg);
+      }
+
+      .contact-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .contact-header h2 {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+        color: var(--text-dark);
+        font-weight: 800;
+      }
+
+      .contact-header p {
+        font-size: 1.15rem;
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+      .contact-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+        align-items: flex-start;
+      }
+
+      .quick-contact,
+      .consultation-form-wrapper {
+        flex: 1;
+      }
+
+      /* Left Column: Quick Contact */
+      .quick-contact h3 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        color: var(--text-dark);
+        font-weight: 700;
+      }
+
+      .contact-info-block {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+        padding: 25px;
+        background-color: var(--white);
+        border-radius: 12px;
+        border: 1px solid var(--input-border);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+      }
+
+      .contact-info-block .icon {
+        margin-right: 20px;
+        width: 48px;
+        height: 48px;
+        /* The colorful accent from the original site */
+        background: linear-gradient(
+          135deg,
+          var(--bright-cyan),
+          var(--primary-teal)
+        );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      /* Using inline SVG for the icons so they are white */
+      .contact-info-block .icon svg {
+        width: 22px;
+        height: 22px;
+        fill: var(--white);
+      }
+
+      .info-text strong {
+        display: block;
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        color: var(--text-dark);
+      }
+
+      .map-container h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        color: var(--text-dark);
+        font-weight: 700;
+      }
+
+      .map-placeholder {
+        width: 100%;
+        height: 250px;
+        border-radius: 12px;
+        background-color: #e0e6ed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--text-gray);
+        font-weight: bold;
+        border: 1px solid var(--input-border);
+      }
+
+      /* Right Column: Consultation Form */
+      .consultation-form-wrapper {
+        background-color: var(--white);
+        padding: 45px;
+        border-radius: 16px;
+        /* Colorful shadow similar to original site */
+        box-shadow: var(--shadow-form);
+      }
+
+      .consultation-form-wrapper h3 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: var(--text-dark);
+        font-weight: 800;
+      }
+
+      .consultation-form-wrapper p {
+        margin-bottom: 35px;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+        flex: 1;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 14px 18px;
+        background-color: var(--white);
+        border: 1px solid var(--input-border);
+        border-radius: 6px;
+        color: var(--text-dark);
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: #a0aec0;
+      }
+
+      /* Focus state gets the bright colorful accent */
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        border-color: var(--bright-cyan);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 178, 255, 0.1);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        height: 140px;
+      }
+
+      /* --- Footer (Placeholder) --- */
+      .footer {
+        padding: 40px 0;
+        text-align: center;
+        background-color: #1a1d26; /* Dark footer like original */
+        color: #9ca3af;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-container">
+        <a href="#" class="logo-text">
+          <div class="logo-icon"></div>
+          BLIT
+        </a>
+        <nav class="nav">
+          <a href="#">Services</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#" class="btn btn-primary">Client Login</a>
+        </nav>
+      </div>
+    </header>
+    <section class="contact-section">
+      <div class="container contact-container">
+        <div class="contact-header">
+          <h2>Contact & Consultation</h2>
+          <p>
+            Ready to elevate your enterprise IT? Reach out directly or schedule
+            a consultation with our solutions architects.
+          </p>
+        </div>
+
+        <div class="contact-content">
+          <div class="quick-contact">
+            <h3>Quick Contact</h3>
+            <div class="contact-info-block">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                  />
+                </svg>
+              </div>
+              <div class="info-text">
+                <strong>Office Address</strong>
+                <p>
+                  123 Tech Park Blvd, Suite 400,<br />Silicon Valley, CA 94025
+                </p>
+              </div>
+            </div>
+            <div class="contact-info-block">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"
+                  />
+                </svg>
+              </div>
+              <div class="info-text">
+                <strong>Phone Support</strong>
+                <p>+1 (800) 555-BLIT<br />Mon-Fri, 9am - 6pm PST</p>
+              </div>
+            </div>
+            <div class="contact-info-block">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                  />
+                </svg>
+              </div>
+              <div class="info-text">
+                <strong>Email Inquiries</strong>
+                <p>enterprise@blit.com</p>
+              </div>
+            </div>
+            <div class="map-container">
+              <h3>OUR HQ</h3>
+              <div class="map-placeholder">Map Preview (Silicon Valley)</div>
+            </div>
+          </div>
+
+          <div class="consultation-form-wrapper">
+            <h3>Request a Consultation</h3>
+            <p>
+              Fill out the form below and our team will get back to you within
+              24 hours.
+            </p>
+            <form action="#">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="full-name">Full Name</label>
+                  <input
+                    type="text"
+                    id="full-name"
+                    name="full-name"
+                    placeholder="Jane Doe"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="company-name">Company Name</label>
+                  <input
+                    type="text"
+                    id="company-name"
+                    name="company-name"
+                    placeholder="Acme Corp"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="work-email">Work Email</label>
+                <input
+                  type="email"
+                  id="work-email"
+                  name="work-email"
+                  placeholder="jane@acme.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="service-interest">Service Interest</label>
+                <select id="service-interest" name="service-interest">
+                  <option value="">Select a service...</option>
+                  <option value="network">Network & IT Solutions</option>
+                  <option value="communication">
+                    Communication & Voice Systems
+                  </option>
+                  <option value="business">Business & Public Sector</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell us about your project or IT challenges..."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-submit">
+                Schedule Consultation
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2024 BLIT. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
