@@ -1,0 +1,387 @@
+body {
+  background-color: var(--page-bg);
+  color: var(--text-gray);
+  line-height: 1.6;
+  /* Add padding top to account for fixed header */
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container-1 {
+  width: min(90%, 1200px);
+  margin-inline: auto;
+}
+
+/* --- 2. Navigation --- */
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(14, 26, 37, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 10vh;
+  width: 100%;
+  padding-inline: max(20px, 5%);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs-s);
+}
+
+nav ul a {
+  color: white;
+  font-weight: 600;
+  padding: 10px 15px;
+  font-size: var(--step--1);
+  transition: color 0.3s;
+}
+
+nav ul a:hover {
+  color: var(--bright-cyan);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs-s);
+}
+
+.logo img {
+  width: clamp(40px, 5vw, 60px);
+  border: 1px solid white;
+}
+
+.logo p {
+  color: var(--primary-white);
+  font-family: var(--font-heading);
+  font-size: var(--step-0);
+  font-weight: 600;
+  letter-spacing: 1.1px;
+}
+
+.logo p span {
+  font-family: inherit;
+  color: var(--vibrant-blue);
+}
+
+.mobile-menu-icon {
+  display: none;
+  color: white;
+  font-size: var(--step-2);
+  cursor: pointer;
+}
+
+/* Nav Responsive Logic */
+@media (max-width: 928px) {
+  nav ul {
+    display: none; /* In a real scenario, use JS to toggle this */
+  }
+  .mobile-menu-icon {
+    display: block;
+  }
+}
+
+/* --- 3. Contact Section --- */
+.contact-section {
+  /* Use fluid padding */
+  padding-block: calc(var(--space-l-2xl) + 12vh);
+  background-color: var(--dark-teal);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: var(--space-xl-2xl);
+}
+
+.contact-header h2 {
+  font-family: var(--font-heading);
+  font-size: var(--step-5);
+  margin-bottom: var(--space-2xs-xs);
+  color: var(--primary-white);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.contact-header p {
+  font-size: var(--step-0);
+  max-width: 65ch;
+  margin-inline: auto;
+  color: var(--primary-grey);
+}
+
+.contact-content {
+  display: grid;
+  /* Creates two columns of exactly equal width */
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-l-xl);
+  align-items: start;
+}
+
+/* Quick Contact column container */
+.quick-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s-m);
+}
+
+/* Consultation Form container */
+.consultation-form-wrapper {
+  background-color: var(--white);
+  padding: var(--space-l-xl);
+  border-radius: 16px;
+  box-shadow: var(--shadow-form);
+  /* Ensure it takes full height if the left side is longer */
+  height: 100%;
+}
+
+/* Responsive: Stack them on mobile/tablets */
+@media (max-width: 992px) {
+  .contact-content {
+    grid-template-columns: 1fr; /* Stacks them vertically */
+  }
+}
+
+/* Left Column: Quick Contact */
+.quick-contact h3 {
+  font-size: var(--step-3);
+  margin-bottom: var(--space-s-m);
+  color: var(--primary-white);
+  font-weight: 400;
+  font-family: var(--font-heading);
+}
+
+.contact-info-block {
+  display: flex;
+  align-items: center; /* Better vertical alignment */
+  margin-bottom: var(--space-s-m);
+  padding: var(--space-s-m);
+  background-color: var(--secondary-white);
+  border-radius: 12px;
+  border: 1px solid var(--input-border);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+/* Keep the container as it is */
+.contact-info-block .icon {
+  margin-right: var(--space-s-m);
+  width: 48px;
+  height: 48px;
+  background: var(--dark-teal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Add this to style the SVG file */
+.contact-info-block .icon img {
+  width: 24px; /* Adjust size as needed */
+  height: 24px;
+  object-fit: contain;
+  /* If you need the icon to be white but the file is black, 
+     you can use a filter: */
+  filter: brightness(0) invert(1);
+}
+
+.info-text strong {
+  display: block;
+  font-size: var(--step-0);
+  margin-bottom: 4px;
+  color: var(--text-dark);
+}
+
+.map-container h3 {
+  font-size: var(--step-2);
+  margin-bottom: var(--space-xs-s);
+  color: var(--primary-white);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  background-color: #e0e6ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-gray);
+  font-weight: bold;
+  border: 1px solid var(--input-border);
+}
+
+/* Right Column: Form */
+.consultation-form-wrapper {
+  background-color: var(--secondary-white);
+  padding: var(--space-l-xl);
+  border-radius: 16px;
+  box-shadow: var(--shadow-form);
+}
+
+.consultation-form-wrapper h3 {
+  font-size: var(--step-3);
+  margin-bottom: var(--space-2xs-xs);
+  color: var(--text-dark);
+  font-weight: 400;
+  font-family: var(--font-heading);
+}
+
+.consultation-form-wrapper p {
+  margin-bottom: var(--space-m-l);
+  font-size: var(--step--1);
+}
+
+/* FLUID FORM: Stack fields on mobile */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s-m);
+}
+
+.form-group {
+  margin-bottom: var(--space-m-l);
+  flex: 1 1 200px; /* Minimum width before stacking */
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  font-size: var(--step--1);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background-color: var(---secondary-white);
+  border: 1px solid var(--dark-blue);
+  border-radius: 6px;
+  color: var(--text-dark);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--vibrant-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 178, 255, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  font-size: var(--step-0);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #00383a;
+}
+
+/* --- 4. Footer --- */
+.main-footer {
+  background-color: #0b0b0b;
+  color: var(--primary-white);
+  padding-block: var(--space-l-2xl);
+  margin-top: auto;
+}
+
+.footer-grid {
+  display: grid;
+  /* Auto-fit columns: Fluid behavior */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-xl-2xl);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.brand-name {
+  letter-spacing: 1px;
+  font-size: var(--step-0);
+  font-family: var(--font-heading);
+}
+
+.tagline {
+  font-size: var(--step--2);
+  opacity: 0.7;
+}
+
+.address {
+  margin-top: var(--space-m-l);
+  font-size: var(--step--1);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.footer-heading {
+  font-size: var(--step-0);
+  margin-bottom: var(--space-s-m);
+  color: white;
+  font-family: var(--font-heading);
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: var(--white);
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  font-size: var(--step--1);
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+.google-map {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  border: 3px solid var(--dark-blue);
+  display: block;
+}
+
+/* Optional: If you want the map to get taller on larger screens */
+@media (min-width: 1024px) {
+  .google-map {
+    height: 350px;
+  }
+}
+#message {
+  min-height: 250px;
+}

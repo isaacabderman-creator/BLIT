@@ -26,6 +26,7 @@
 
   // COLOR PALETTE
   --vibrant-blue: hsl(204, 75%, 60%);
+  --second-blue: hsl(204, 75%, 60%);
   --dark-blue: hsl(199, 79.8%, 19.4%);
 
   --primary-white: hsl(0, 0%, 97%);
@@ -33,5 +34,6 @@
   --primary-grey: hsl(180, 1%, 94%);
   --vibrant-teal: #0b2739;
   --dark-teal: #0c3139;
-  --primary-gradient: linear-gradient(90deg, #005587 0%, #0099cc 100%);
+  --font-main: "Inter", sans-serif;
+  --font-heading: "Syne", sans-serif;
 }

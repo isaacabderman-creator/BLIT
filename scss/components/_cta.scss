@@ -1,17 +1,12 @@
 /* --- CTA Section --- */
 .cta-section {
-  background-color: #0b0b0b;
-  padding: 70px;
+  background-color: var(--dark-blue);
+  padding: var(--space-l-2xl);
 }
 .float {
-  background-color: #0b0b0b; /* Fallback */
-  // background: linear-gradient(
-  //   135deg,
-  //   #101c2c 0%,
-  //   #004e7a 100%
-  // ); /* Styled like image_1 bottom area */
-  border: 3px solid var(--dark-teal);
-  padding: 100px 0;
+  background-color: rgba(100, 100, 100, 0.4);
+  border: 3px solid var(--primary-white);
+  padding: 100px var(--space-l-2xl);
   text-align: center;
   color: var(--white);
   border-radius: 12px;

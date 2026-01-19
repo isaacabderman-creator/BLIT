@@ -7,19 +7,19 @@
   padding-inline: calc(var(--space-s-m) + 0.2rem);
   padding-block: calc(var(--space-2xs-xs) + 0.2rem);
   text-decoration: none;
+  cursor: pointer;
 }
 .white {
   background-color: transparent;
   border: 1px solid white;
   color: #fff;
-  padding-inline: calc(var(--space-s-m) + 0.2rem - 2px);
-  padding-block: calc(var(--space-2xs-xs) + 0.2rem - 2px);
 }
 .teal {
   background-color: var(--dark-teal);
 }
 .cta-buttons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
 }

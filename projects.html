@@ -3,209 +3,265 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Projects | BLIT IT Services</title>
-    <link rel="stylesheet" href="projects.css" />
+    <title>Our Work | BLIT IT Services</title>
+    <link rel="stylesheet" href="css/project.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
-    <header>
-      <div class="container header-content">
-        <div class="logo"><strong>BE LOYAL</strong> IT</div>
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Solutions</a></li>
-            <li><a href="#" class="active">Projects</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </nav>
-        <a href="#" class="btn btn-primary">Get a proposal</a>
+    <nav>
+      <div class="logo">
+        <img src="images/logo_blit.png" alt="Logo BLIT" />
+        <p>BE LOYAL <span>IT</span></p>
       </div>
-    </header>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li class="active"><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Reach Us</a></li>
+        <a href="contact.html" class="button">Get a proposal</a>
+      </ul>
+    </nav>
 
     <main>
-      <section class="hero-dark">
+      <section class="page-header">
         <div class="container text-center">
-          <h1>Proven <span class="highlight">Impact</span></h1>
-          <p class="hero-sub">
-            Discover how BLIT empowers enterprises to overcome complex
-            challenges and achieve scalable growth through future-ready IT
-            solutions.
+          <h1>
+            Real <span class="highlight">Results</span> for<br />Modern
+            Enterprises
+          </h1>
+          <p>
+            Explore how we've helped global companies optimize their
+            infrastructure and secure their future.
           </p>
-
-          <div class="filter-bar">
-            <button class="filter-btn active">All Projects</button>
-            <button class="filter-btn">Network Solutions</button>
-            <button class="filter-btn">Communication</button>
-            <button class="filter-btn">Business Events</button>
-            <button class="filter-btn">Cybersecurity</button>
-          </div>
         </div>
       </section>
 
-      <section class="case-study-main">
+      <section class="projects-section">
         <div class="container">
-          <div class="case-card-large">
-            <div class="case-img-wrap">
-              <img src="screen.png" alt="Data Center" class="crop-top" />
-              <div class="img-overlay-text">
-                <span class="tag">Network Infrastructure</span>
-                <h3>Global Logistics Corp</h3>
+          <div class="grid-3 uniform-layout">
+            <div class="project-card">
+              <div class="project-img">
+                <img src="images/rack_4.png" alt="Server Room" />
+                <span class="project-tag">Network</span>
+              </div>
+              <div class="project-content">
+                <h3>Global Logistics Infrastructure</h3>
+                <p>
+                  Complete overhaul of legacy cabling and server architecture
+                  for a logistics giant, resulting in 99.99% uptime.
+                </p>
+                <div class="project-meta">
+                  <span
+                    ><i class="fa-solid fa-check"></i> 400% Speed Increase</span
+                  >
+                </div>
               </div>
             </div>
-            <div class="case-content">
-              <h2>Modernizing Legacy Data Centers for Speed</h2>
 
-              <div class="star-framework">
-                <div class="star-item">
-                  <span class="star-letter s-bg">S</span>
-                  <div>
-                    <strong>Situation:</strong> Aging cabling infrastructure
-                    caused frequent outages.
-                  </div>
-                </div>
-                <div class="star-item">
-                  <span class="star-letter t-bg">T</span>
-                  <div>
-                    <strong>Task:</strong> Redesign network topography to
-                    support 10Gbps throughput.
-                  </div>
-                </div>
-                <div class="star-item">
-                  <span class="star-letter a-bg">A</span>
-                  <div>
-                    <strong>Action:</strong> Implemented full fiber backbone and
-                    automated failover.
-                  </div>
-                </div>
-                <div class="star-item result-box">
-                  <span class="star-letter r-bg">R</span>
-                  <div>
-                    <strong>Result:</strong> Achieved 99.99% uptime and
-                    increased throughput by 400%.
-                  </div>
+            <div class="project-card">
+              <div class="project-img">
+                <img src="images/rack_2.jpg" alt="Cybersecurity" />
+                <span class="project-tag">Cybersecurity</span>
+              </div>
+              <div class="project-content">
+                <h3>FinTech Data Protection</h3>
+                <p>
+                  Implemented zero-trust architecture and automated threat
+                  detection for a leading financial institution.
+                </p>
+                <div class="project-meta">
+                  <span><i class="fa-solid fa-check"></i> Zero Breaches</span>
                 </div>
               </div>
+            </div>
 
-              <div class="stats-row">
-                <div class="stat-box">
-                  <span class="stat-val">400%</span>
-                  <span class="stat-label">SPEED INCREASE</span>
+            <div class="project-card">
+              <div class="project-img">
+                <img src="images/phone_2.jpg" alt="VoIP" />
+                <span class="project-tag">Communication</span>
+              </div>
+              <div class="project-content">
+                <h3>Unified VoIP Migration</h3>
+                <p>
+                  Seamless migration of 5,000 employees to a cloud-based
+                  communication system with no downtime.
+                </p>
+                <div class="project-meta">
+                  <span
+                    ><i class="fa-solid fa-check"></i> 40% Cost Reduction</span
+                  >
                 </div>
-                <div class="stat-box">
-                  <span class="stat-val">Zero</span>
-                  <span class="stat-label">DOWNTIME INCIDENTS</span>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-img">
+                <img src="images/rack_3.png" alt="Cloud" />
+                <span class="project-tag">Cloud</span>
+              </div>
+              <div class="project-content">
+                <h3>Hybrid Cloud Integration</h3>
+                <p>
+                  Designed a custom hybrid environment allowing scalable storage
+                  for a media production house.
+                </p>
+                <div class="project-meta">
+                  <span
+                    ><i class="fa-solid fa-check"></i> 2PB Data Managed</span
+                  >
                 </div>
-                <a href="#" class="full-study-link">Full Case Study →</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-img">
+                <img src="images/events_3.png" alt="WiFi" />
+                <span class="project-tag">Events</span>
+              </div>
+              <div class="project-content">
+                <h3>TechSummit 2025 WiFi</h3>
+                <p>
+                  Deployed high-density WiFi 6 coverage for an expo center
+                  supporting 20,000 simultaneous devices.
+                </p>
+                <div class="project-meta">
+                  <span
+                    ><i class="fa-solid fa-check"></i> 10Gbps Throughput</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-img">
+                <img src="images/roadmap.jpg" alt="Consulting" />
+                <span class="project-tag">Consulting</span>
+              </div>
+              <div class="project-content">
+                <h3>Enterprise IT Strategy</h3>
+                <p>
+                  Developed a 5-year IT roadmap for a healthcare provider to
+                  modernize patient data systems.
+                </p>
+                <div class="project-meta">
+                  <span><i class="fa-solid fa-check"></i> HIPAA Compliant</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="projects-grid-sec">
-        <div class="container grid-2">
-          <div class="case-card-small">
-            <div class="small-img-wrap">
-              <img src="screen.png" alt="VoIP" class="crop-mid" />
-              <span class="tag-float">Communication Systems</span>
-            </div>
-            <div class="small-content">
-              <h4>FinTech Connect: Unified VoIP Migration</h4>
-              <div class="key-outcomes">
-                <p><strong>KEY OUTCOMES</strong></p>
-                <ul>
-                  <li>✓ Reduced monthly telephony costs by 60%</li>
-                  <li>✓ Enabled remote work for 200+ employees</li>
-                </ul>
-              </div>
-              <a href="#" class="btn btn-outline-grey">Read Story</a>
-            </div>
-          </div>
-
-          <div class="case-card-small">
-            <div class="small-img-wrap">
-              <img src="screen.png" alt="Event WiFi" class="crop-event" />
-              <span class="tag-float">Event Services</span>
-            </div>
-            <div class="small-content">
-              <h4>TechExpo 2023: High-Density WiFi</h4>
-              <div class="key-outcomes">
-                <p><strong>KEY OUTCOMES</strong></p>
-                <ul>
-                  <li>✓ Supported 12,000+ unique devices</li>
-                  <li>✓ Average speed of 100Mbps per user</li>
-                </ul>
-              </div>
-              <a href="#" class="btn btn-outline-grey">Read Story</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="testimonials">
+      <section class="testimonials-section">
         <div class="container">
-          <h2 class="text-center light-text">Trusted by Industry Leaders</h2>
-          <div class="testimonial-grid">
-            <div class="test-card">
-              <span class="quote-icon">"</span>
+          <div class="section-header text-center">
+            <h2>Trusted by Leaders</h2>
+            <p>Don't just take our word for it.</p>
+          </div>
+
+          <div class="grid-2">
+            <div class="quote-card">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
               <p>
                 "BLIT isn't just a vendor; they are partners. Their proactive
-                approach has saved us thousands."
+                approach saved us thousands in potential downtime during our
+                busy season."
               </p>
-              <div class="user">
+              <div class="quote-author">
                 <strong>Sarah Jenkins</strong>
-                <span>CTO, MediaStream Inc.</span>
+                <span>CTO, Logistics Corp</span>
               </div>
             </div>
-            <div class="test-card">
-              <span class="quote-icon">"</span>
+
+            <div class="quote-card">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
               <p>
-                "The migration was seamless. The BLIT team handled everything
-                with military precision."
+                "The migration was seamless. I was terrified of losing data, but
+                the BLIT team handled everything with military precision."
               </p>
-              <div class="user">
+              <div class="quote-author">
                 <strong>David Ross</strong>
                 <span>Director of Ops, RetailFlow</span>
               </div>
             </div>
           </div>
-          <div class="logo-cloud">
-            <span>CloudCore</span> <span>SecureNet</span> <span>DataFlow</span>
-            <span>CorpTech</span>
-          </div>
         </div>
       </section>
 
-      <section class="cta-banner">
-        <div class="container cta-flex">
-          <div>
-            <h2>Ready to write your success story?</h2>
+      <section class="cta-area">
+        <div class="container">
+          <div class="cta-box">
+            <h2>Start your next project with us</h2>
             <p>
-              Let's discuss how our IT solutions can drive growth for your
-              enterprise.
+              We have the experience to handle your most complex IT challenges.
             </p>
+            <div class="cta-group center-group">
+              <a href="contact.html" class="button btn-filled"
+                >Get a Proposal</a
+              >
+            </div>
           </div>
-          <a href="#" class="btn btn-primary-alt">Get Started</a>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="container footer-main">
-        <div class="footer-col info">
-          <div class="logo"><strong>BE LOYAL</strong> IT</div>
-          <p>Loyal we are, confident you will be.</p>
-          <p class="addr">Springfield, Illinois, 55569</p>
+    <footer class="main-footer">
+      <div class="container-1">
+        <div class="footer-grid">
+          <div class="footer-col brand-col">
+            <div class="logo-area">
+              <div class="logo">
+                <img src="images/logo_blit.png" alt="Be Loyal IT" />
+              </div>
+              <div>
+                <h4 class="brand-name">BE LOYAL IT</h4>
+              </div>
+            </div>
+
+            <p class="tagline">Loyal we are, confident you will be.</p>
+
+            <div class="address-block">
+              <span class="brand-icon">
+                <img src="../images/home.svg" alt="Location Icon" />
+              </span>
+              <span class="location">Lot III P 20 Ge Marohoho Tsimbazaza</span>
+            </div>
+
+          <div class="footer-col">
+            <h4 class="footer-heading">Menu</h4>
+            <ul class="footer-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solutions.html">Solutions</a></li>
+              <li><a href="projects.html">Case Studies</a></li>
+              <li><a href="contact.html">Reach Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-heading">Social</h4>
+            <ul class="footer-nav">
+              <li>
+                <a href="https://www.linkedin.com/showcase/beloyalit/"
+                  >LinkedIn</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://web.facebook.com/beloyalit/?locale=fr_FR&_rdc=1&_rdr"
+                  >Facebook</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-col">
-          <h5>EXPLORE</h5>
-          <a href="#">Home</a><a href="#">Solutions</a><a href="#">Reach Us</a>
-        </div>
-        <div class="footer-col">
-          <h5>STAY UPDATED</h5>
-          <div class="sub-form">
-            <input type="email" placeholder="Your email" />
-            <button>SUBSCRIBE</button>
+
+
+        <div class="footer-bottom">
+          <div class="copyright">
+            &copy; 2024 Be Loyal IT. All rights reserved.
           </div>
         </div>
       </div>

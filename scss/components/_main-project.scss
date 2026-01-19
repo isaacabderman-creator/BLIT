@@ -1,0 +1,283 @@
+/* --- PASTE YOUR :ROOT VARIABLES HERE FROM PREVIOUS PROMPT --- */
+/* (Keeping this concise as requested, using only those variables) */
+
+/* --- PAGE SPECIFIC STYLES --- */
+
+body {
+  background-color: var(--dark-teal);
+  color: var(--primary-white);
+  font-family: var(--font-main);
+}
+
+/* Page Header */
+.page-header {
+  padding-top: calc(var(--space-l-4xl) + 12vh);
+  padding-bottom: var(--space-l-4xl);
+  padding-inline: var(--space-l-4xl);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/project.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  p {
+    max-width: 60ch;
+  }
+}
+
+.highlight {
+  color: var(--vibrant-blue);
+  font-size: var(--step-5);
+}
+.page-header h1 {
+  font-family: var(--font-heading);
+  font-size: var(--step-5);
+  margin-bottom: var(--space-s-m);
+  color: var(--primary-white);
+}
+
+/* Projects Section */
+.projects-section {
+  padding-bottom: var(--space-xl-2xl);
+}
+
+.uniform-layout {
+  display: grid;
+  /* Responsive Grid: Cards shrink/grow but stay uniform */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--space-m-l);
+}
+
+.project-card {
+  background-color: var(--vibrant-teal); /* Slightly lighter than body */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px; /* Keeping sharp/tech feel */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures uniform height */
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--vibrant-blue);
+}
+
+.project-img {
+  height: 240px;
+  width: 100%;
+  position: relative;
+  background-color: #000; /* Fallback */
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.project-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--vibrant-blue);
+  color: white;
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  border-radius: 2px;
+}
+
+.project-content {
+  padding: var(--space-m-l);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes content to fill space */
+}
+
+.project-content h3 {
+  font-family: var(--font-heading);
+  font-size: var(--step-1);
+  margin-bottom: var(--space-xs-s);
+  color: var(--primary-white);
+}
+
+.project-content p {
+  font-size: var(--step--1);
+  color: var(--secondary-white);
+  margin-bottom: var(--space-s-m);
+  flex-grow: 1; /* Pushes meta to bottom */
+}
+
+.project-meta {
+  padding-top: var(--space-xs-s);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--vibrant-blue);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #082025; /* Darker accent background */
+  padding-block: var(--space-xl-2xl);
+}
+
+.section-header h2 {
+  font-family: var(--font-heading);
+  font-size: var(--step-3);
+  margin-bottom: 10px;
+}
+.section-header p {
+  margin-bottom: var(--space-l-xl);
+}
+
+.quote-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: var(--space-m-l);
+  position: relative;
+}
+
+.quote-icon {
+  font-size: var(--step-2);
+  color: var(--vibrant-blue);
+  margin-bottom: var(--space-s-m);
+  display: block;
+}
+
+.quote-card p {
+  font-style: italic;
+  font-size: var(--step-0);
+  color: var(--primary-white);
+  margin-bottom: var(--space-m-l);
+}
+
+.quote-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-author strong {
+  color: var(--primary-white);
+  font-size: var(--step-0);
+}
+
+.quote-author span {
+  color: var(--secondary-white);
+  font-size: var(--step--1);
+}
+
+/* CTA Area (Reusing variables) */
+.cta-area {
+  padding-block: var(--space-xl-2xl);
+  background-color: var(--dark-teal);
+}
+
+.cta-box {
+  background: radial-gradient(circle at center, #143d47, var(--dark-teal));
+  border: 1px solid var(--vibrant-blue);
+  padding: var(--space-l-2xl);
+  text-align: center;
+}
+
+.cta-box h2 {
+  font-family: var(--font-heading);
+  font-size: var(--step-4);
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+
+/* Apply the requested fluid padding to all main child elements */
+main > * {
+  padding-inline: var(--space-l-4xl);
+  padding-block: var(--space-xl-2xl);
+}
+
+/* Fix for Button Overlapping and Layout Flow */
+.cta-group {
+  display: flex;
+  flex-wrap: wrap; /* Prevents overlap by wrapping buttons to next line if needed */
+  gap: var(--space-s-m);
+  justify-content: center;
+  margin-top: var(--space-m-l);
+}
+
+/* Fluid Project Grid */
+.grid-uniform {
+  display: grid;
+  /* Uses Utopia variables for fluid spacing between cards */
+  gap: var(--space-m-l);
+  /* Automatically adjusts columns based on available space */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+}
+
+.project-card {
+  background-color: var(--vibrant-teal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Fluid Typography for Headings */
+h1 {
+  font-size: var(--step-4);
+}
+h2 {
+  font-size: var(--step-3);
+}
+h3 {
+  font-size: var(--step-1);
+}
+p {
+  font-size: var(--step-0);
+  line-height: 1.6;
+}
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+/* Testimonial Fluidity */
+.testimonial-grid {
+  display: grid;
+  gap: var(--space-m-l);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+  margin-top: var(--space-l-xl);
+}
+
+.quote-card {
+  padding: var(--space-m-l);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* CTA Box Fluidity */
+.cta-box {
+  text-align: center;
+  padding: var(--space-l-2xl);
+  border: 1px solid var(--vibrant-blue);
+  border-radius: 12px;
+  background: radial-gradient(circle at center, #143d47, var(--dark-teal));
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-l-xl);
+}
+@media (max-width: 768px) {
+  .uniform-layout {
+    grid-template-columns: 1fr; /* Stack cards on mobile */
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}

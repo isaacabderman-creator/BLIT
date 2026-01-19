@@ -8,33 +8,77 @@
   .icon {
     width: var(--space-5xl-6xl);
     aspect-ratio: 1/1;
-    background: transparent;
-    border: 20px solid #0b2739;
+    border: 20px solid rgba(255, 255, 255, 0.6);
     border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+  }
 
+  .icon-strip {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    /* Set the size of your "square" */
+    width: 400%; /* Changed to 400% for 4 items */
+    height: 100%;
+    animation: infiniteSlide 8s infinite ease-in-out;
+  }
 
-    /* Pick your uniform color */
-    .icon-container {
-      width: var(--space-4xl-5xl);
-      height: var(--space-4xl-5xl);
-      background-color: #0b2739;
+  .icon-item {
+    flex: 0 0 25%; /* Each item is now 1/4 of the strip */
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 60%;
+    mask-size: 60%;
+    -webkit-mask-position: center;
+    mask-position: center;
+  }
 
-      /* Apply the SVG as a mask */
-      -webkit-mask-image: url("../images/key.svgstart");
-      mask-image: url("../images/key.svg");
+  /* Icons */
+  .key {
+    -webkit-mask-image: url("../images/key.svg");
+    mask-image: url("../images/key.svg");
+  }
+  .lock {
+    -webkit-mask-image: url("../images/star.svg");
+    mask-image: url("../images/star.svg");
+  }
+  .gear {
+    -webkit-mask-image: url("../images/focus.svg");
+    mask-image: url("../images/focus.svg");
+  }
 
-      /* Ensure the icon centers and scales correctly */
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-size: contain;
-      mask-size: contain;
-      -webkit-mask-position: center;
-      mask-position: center;
+  /* Infinite Loop Animation */
+  @keyframes infiniteSlide {
+    /* Start at Icon 1 */
+    0%,
+    20% {
+      transform: translateX(0%);
+    }
+
+    /* Slide to Icon 2 */
+    25%,
+    45% {
+      transform: translateX(-25%);
+    }
+
+    /* Slide to Icon 3 */
+    50%,
+    70% {
+      transform: translateX(-50%);
+    }
+
+    /* Slide to the Duplicate Icon 1 */
+    75%,
+    95% {
+      transform: translateX(-75%);
+    }
+
+    /* At 100%, the animation resets to 0% automatically. 
+     Since 95% (Duplicate) looks exactly like 0% (Original), 
+     the reset is invisible.
+  */
+    100% {
+      transform: translateX(-75%);
     }
   }
   .game-changer {
@@ -64,7 +108,7 @@
           mask-size: contain;
           mask-repeat: no-repeat;
 
-          background-color: var(--vibrant-teal);
+          background-color: rgba(255, 255, 255, 0.2);
         }
       }
     }
