@@ -248,6 +248,11 @@ header .container a {
   text-decoration: none;
 }
 
+@media (428px < width) {
+  p {
+    display: none;
+  }
+}
 main > * {
   padding-inline: var(--space-l-4xl);
 }
@@ -330,8 +335,9 @@ section {
   background-size: cover;
   background-position: center center;
   position: relative;
-  border: 1px solid gray;
   border-radius: 12px;
+  background-clip: padding-box;
+  outline: 1px solid #3d657e;
 }
 .card-wrapper .card:nth-of-type(1) {
   background-image: url("../images/rack_1.jpg");
@@ -357,6 +363,7 @@ section {
   z-index: 2;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
+  background-clip: padding-box;
 }
 .legend h3 {
   font-family: "Syne", sans-serif;

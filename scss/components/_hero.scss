@@ -105,3 +105,8 @@ header {
     }
   }
 }
+@media (428px < width) {
+  p {
+    display: none;
+  }
+}
