@@ -98,7 +98,7 @@ header {
     }
   }
 }
-@media (428px < width) {
+@media (428px > width) {
   .sub {
     display: none;
   }

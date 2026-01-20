@@ -248,7 +248,7 @@ header .container a {
   text-decoration: none;
 }
 
-@media (428px < width) {
+@media (428px > width) {
   .sub {
     display: none;
   }
