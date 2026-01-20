@@ -249,7 +249,7 @@ header .container a {
 }
 
 @media (428px < width) {
-  p {
+  .sub {
     display: none;
   }
 }
