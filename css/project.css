@@ -454,13 +454,14 @@ h3 {
   font-family: "Syne", sans-serif;
   font-weight: normal;
   color: var(--primary-white);
+  margin-bottom: var(--space-xs-s);
 }
 
 .cta-content p {
   color: rgba(255, 255, 255, 0.8);
   font-size: var(--step-0);
   max-width: 600px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto var(--space-m-l);
 }
 
 /* --- Corporate Footer (3-Column Variant) --- */
