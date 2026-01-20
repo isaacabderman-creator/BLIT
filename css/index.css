@@ -248,8 +248,11 @@ header .container a {
   text-decoration: none;
 }
 
-@media (428px > width) {
-  .sub {
+@media (max-width: 458px) {
+  header .container h1 {
+    margin-bottom: var(--space-xl-2xl);
+  }
+  #sub {
     display: none;
   }
 }
@@ -633,10 +636,6 @@ section {
 
 .footer-grid {
   display: grid;
-  /* Key Change: 2fr 1fr 1fr 
-     The first column takes 50% of the space, pushing the links 
-     to the right. This creates a balanced, uncrowded look.
-  */
   grid-template-columns: 2fr 1fr 1fr;
   gap: var(--space-l-xl);
   margin-bottom: var(--space-l-xl);

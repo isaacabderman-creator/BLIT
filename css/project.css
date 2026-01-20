@@ -474,10 +474,6 @@ h3 {
 
 .footer-grid {
   display: grid;
-  /* Key Change: 2fr 1fr 1fr 
-     The first column takes 50% of the space, pushing the links 
-     to the right. This creates a balanced, uncrowded look.
-  */
   grid-template-columns: 2fr 1fr 1fr;
   gap: var(--space-l-xl);
   margin-bottom: var(--space-l-xl);
