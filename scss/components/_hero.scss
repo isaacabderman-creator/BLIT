@@ -98,11 +98,3 @@ header {
     }
   }
 }
-@media (max-width: 458px) {
-  header .container h1 {
-    margin-bottom: var(--space-xl-2xl);
-  }
-  .sub {
-    display: none;
-  }
-}
