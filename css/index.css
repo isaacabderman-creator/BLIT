@@ -255,9 +255,6 @@ header .container a {
   #sub {
     display: none;
   }
-  p {
-    text-align: justify;
-  }
 }
 main > * {
   padding-inline: var(--space-l-4xl);
