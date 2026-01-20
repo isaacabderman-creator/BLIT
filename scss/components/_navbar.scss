@@ -34,6 +34,8 @@ nav {
       font-weight: 600;
       padding: 20px;
       margin-inline: 10px;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
   }
 }

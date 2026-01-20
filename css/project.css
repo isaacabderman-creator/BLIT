@@ -76,6 +76,8 @@ nav ul a {
   font-weight: 600;
   padding: 20px;
   margin-inline: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .logo {
@@ -132,7 +134,7 @@ nav ul a {
   text-decoration: none;
   cursor: pointer;
   text-align: center;
-  flex: 1 0 200px;
+  border-radius: 4px;
 }
 .button:hover {
   scale: 1.01;
@@ -155,6 +157,11 @@ nav ul a {
   gap: 1.5rem;
 }
 
+@media (max-width: 458px) {
+  .cta-buttons .button {
+    width: 100%;
+  }
+}
 body {
   background-color: var(--dark-teal);
   color: var(--primary-white);
@@ -443,11 +450,14 @@ h3 {
   background-color: var(--dark-blue);
   padding: var(--space-l-2xl);
 }
+.cta-section .button {
+  border-radius: 4px;
+}
 
 .float {
   background-color: rgba(100, 100, 100, 0.4);
   border: 3px solid var(--primary-white);
-  padding: 100px var(--space-l-2xl);
+  padding: 80px var(--space-l-2xl);
   text-align: center;
   color: var(--white);
   border-radius: 12px;
@@ -474,7 +484,8 @@ h3 {
   align-items: center;
   height: 56px;
   background-color: transparent;
-  border: 1px solid var(--vibrant-blue);
+  border: 1px solid hsl(199, 100%, 30%);
+  border-radius: 4px;
   padding: 0;
   cursor: pointer;
   text-decoration: none;
@@ -487,7 +498,7 @@ h3 {
 }
 
 .button-icon-box {
-  background-color: var(--second-blue);
+  background-color: hsl(199, 100%, 30%);
   height: 100%;
   width: 60px;
   display: flex;

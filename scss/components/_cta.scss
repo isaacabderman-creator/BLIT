@@ -2,11 +2,14 @@
 .cta-section {
   background-color: var(--dark-blue);
   padding: var(--space-l-2xl);
+  .button {
+    border-radius: 4px;
+  }
 }
 .float {
   background-color: rgba(100, 100, 100, 0.4);
   border: 3px solid var(--primary-white);
-  padding: 100px var(--space-l-2xl);
+  padding: 80px var(--space-l-2xl);
   text-align: center;
   color: var(--white);
   border-radius: 12px;
@@ -33,7 +36,8 @@
 
   height: 56px;
   background-color: transparent;
-  border: 1px solid var(--vibrant-blue);
+  border: 1px solid hsl(199, 100%, 30%);
+  border-radius: 4px;
   padding: 0;
   cursor: pointer;
   text-decoration: none;
@@ -47,7 +51,7 @@
 }
 
 .button-icon-box {
-  background-color: var(--second-blue);
+  background-color: hsl(199, 100%, 30%);
 
   height: 100%;
   width: 60px;

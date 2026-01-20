@@ -80,6 +80,7 @@ section {
     border-radius: 12px;
     background-clip: padding-box;
     outline: 1px solid #3d657e;
+    transition: transform 0.3s ease;
     &:nth-of-type(1) {
       background-image: url("../images/rack_1.jpg");
     }
@@ -88,6 +89,10 @@ section {
     }
     &:nth-of-type(3) {
       background-image: url("../images/business_event_1.jpg");
+    }
+    &:hover {
+      transform: translateY(-5px);
+      outline-color: var(--vibrant-blue);
     }
   }
 }

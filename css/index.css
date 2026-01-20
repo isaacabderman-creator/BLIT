@@ -76,6 +76,8 @@ nav ul a {
   font-weight: 600;
   padding: 20px;
   margin-inline: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .logo {
@@ -132,7 +134,7 @@ nav ul a {
   text-decoration: none;
   cursor: pointer;
   text-align: center;
-  flex: 1 0 200px;
+  border-radius: 4px;
 }
 .button:hover {
   scale: 1.01;
@@ -155,6 +157,11 @@ nav ul a {
   gap: 1.5rem;
 }
 
+@media (max-width: 458px) {
+  .cta-buttons .button {
+    width: 100%;
+  }
+}
 header {
   min-width: 100%;
   min-height: 100dvh;
@@ -338,6 +345,7 @@ section {
   border-radius: 12px;
   background-clip: padding-box;
   outline: 1px solid #3d657e;
+  transition: transform 0.3s ease;
 }
 .card-wrapper .card:nth-of-type(1) {
   background-image: url("../images/rack_1.jpg");
@@ -347,6 +355,10 @@ section {
 }
 .card-wrapper .card:nth-of-type(3) {
   background-image: url("../images/business_event_1.jpg");
+}
+.card-wrapper .card:hover {
+  transform: translateY(-5px);
+  outline-color: var(--vibrant-blue);
 }
 
 .legend {
@@ -597,11 +609,14 @@ section {
   background-color: var(--dark-blue);
   padding: var(--space-l-2xl);
 }
+.cta-section .button {
+  border-radius: 4px;
+}
 
 .float {
   background-color: rgba(100, 100, 100, 0.4);
   border: 3px solid var(--primary-white);
-  padding: 100px var(--space-l-2xl);
+  padding: 80px var(--space-l-2xl);
   text-align: center;
   color: var(--white);
   border-radius: 12px;
@@ -628,7 +643,8 @@ section {
   align-items: center;
   height: 56px;
   background-color: transparent;
-  border: 1px solid var(--vibrant-blue);
+  border: 1px solid hsl(199, 100%, 30%);
+  border-radius: 4px;
   padding: 0;
   cursor: pointer;
   text-decoration: none;
@@ -641,7 +657,7 @@ section {
 }
 
 .button-icon-box {
-  background-color: var(--second-blue);
+  background-color: hsl(199, 100%, 30%);
   height: 100%;
   width: 60px;
   display: flex;
