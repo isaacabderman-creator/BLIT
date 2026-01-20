@@ -131,6 +131,11 @@ nav ul a {
   padding-block: calc(var(--space-2xs-xs) + 0.2rem);
   text-decoration: none;
   cursor: pointer;
+  text-align: center;
+  flex: 1 0 200px;
+}
+.button:hover {
+  scale: 1.01;
 }
 
 .white {
