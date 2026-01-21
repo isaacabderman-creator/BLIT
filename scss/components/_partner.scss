@@ -28,7 +28,7 @@ section {
     flex-grow: 1;
     gap: 50px;
     img {
-      height: 90px;
+      height: var(--space-xl-2xl);
     }
   }
 }

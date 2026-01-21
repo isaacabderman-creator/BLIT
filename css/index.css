@@ -135,9 +135,11 @@ nav ul a {
   cursor: pointer;
   text-align: center;
   border-radius: 4px;
+  transition: all 100ms ease;
 }
 .button:hover {
-  scale: 1.01;
+  scale: 1.02;
+  transform: translateY(-1px);
 }
 
 .white {
@@ -292,7 +294,7 @@ section {
   gap: 50px;
 }
 .partners .wrapper img {
-  height: 90px;
+  height: var(--space-xl-2xl);
 }
 
 .title h2 {
@@ -499,8 +501,14 @@ section {
   border-radius: 12px;
   padding-left: 10px;
 }
+.square-btn:hover {
+  scale: 1.02;
+}
 .square-btn .icon-mask {
   background-color: var(--primary-white);
+}
+.square-btn .icon-mask:hover {
+  scale: 1.02;
 }
 
 /* 4. The Mask (The Magic Part) */

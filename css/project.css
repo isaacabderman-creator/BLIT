@@ -135,9 +135,11 @@ nav ul a {
   cursor: pointer;
   text-align: center;
   border-radius: 4px;
+  transition: all 100ms ease;
 }
 .button:hover {
-  scale: 1.01;
+  scale: 1.02;
+  transform: translateY(-1px);
 }
 
 .white {

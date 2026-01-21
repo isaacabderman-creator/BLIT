@@ -10,8 +10,10 @@
   cursor: pointer;
   text-align: center;
   border-radius: 4px;
+  transition: all 100ms ease;
   &:hover {
-    scale: 1.01;
+    scale: 1.02;
+    transform: translateY(-1px);
   }
 }
 .white {

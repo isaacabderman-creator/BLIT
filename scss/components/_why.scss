@@ -125,8 +125,14 @@
   transition: background-color 0.2s ease;
   border-radius: 12px;
   padding-left: 10px;
+  &:hover {
+    scale: 1.02;
+  }
   .icon-mask {
     background-color: var(--primary-white);
+    &:hover {
+      scale: 1.02;
+    }
   }
 }
 
