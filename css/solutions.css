@@ -847,7 +847,7 @@ main .cta-section {
 .tagline {
   font-size: var(--step--1);
   color: var(--secondary-white);
-  margin-bottom: var(--space-m-l); /* Increased margin for better spacing */
+  margin-bottom: var(--space-m-l);
   max-width: 35ch;
   line-height: 1.5;
 }
@@ -868,7 +868,7 @@ main .cta-section {
 
 /* --- Link Columns --- */
 .footer-heading {
-  font-family: var(--font-heading); /* Syne */
+  font-family: var(--font-heading);
   font-size: var(--step-0);
   font-weight: 600;
   color: var(--primary-white);
@@ -884,11 +884,11 @@ main .cta-section {
 }
 
 .footer-nav li {
-  margin-bottom: var(--space-xs-s); /* Slightly more space between links */
+  margin-bottom: var(--space-xs-s);
 }
 
 .footer-nav a {
-  font-family: var(--font-main); /* Inter */
+  font-family: var(--font-main);
   color: var(--secondary-white);
   text-decoration: none;
   font-size: var(--step--1);
@@ -898,7 +898,7 @@ main .cta-section {
 
 .footer-nav a:hover {
   color: var(--primary-white);
-  transform: translateX(5px); /* Subtle corporate hover effect */
+  transform: translateX(5px);
 }
 
 /* --- Footer Bottom --- */
@@ -913,15 +913,13 @@ main .cta-section {
   opacity: 0.5;
 }
 
-/* --- Responsive --- */
 @media (max-width: 900px) {
   .footer-grid {
-    /* Stack brand on top, links side-by-side below */
     grid-template-columns: 1fr 1fr;
     gap: var(--space-m-l);
   }
   .brand-col {
-    grid-column: 1/-1; /* Brand spans full width */
+    grid-column: 1/-1;
     margin-bottom: var(--space-s-m);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding-bottom: var(--space-s-m);
@@ -929,7 +927,6 @@ main .cta-section {
 }
 @media (max-width: 500px) {
   .footer-grid {
-    /* Full stack on mobile */
     grid-template-columns: 1fr;
   }
 }
@@ -937,23 +934,21 @@ main .cta-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Using 'em' makes the icon scale perfectly with the text size */
   width: 1.2em;
   height: 1.2em;
-  flex-shrink: 0; /* Prevents the icon from squishing if text wraps */
+  flex-shrink: 0;
 }
 
 .brand-icon img,
 .brand-icon svg {
   width: 100%;
   height: 100%;
-  /* If using an inline SVG, this ensures it matches your brand blue */
   filter: brightness(0) invert(1);
 }
 
 .address-block {
   display: flex;
-  align-items: center; /* Vertically centers icon with first line of text */
+  align-items: center;
   gap: var(--space-2xs-xs);
   font-size: var(--step--1);
   color: var(--secondary-white);
