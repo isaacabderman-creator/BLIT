@@ -6,7 +6,6 @@ nav {
   background-color: var(--dark-teal);
   background: rgba(14, 26, 37, 0.75);
   backdrop-filter: blur(12px);
-  /* Adds a very subtle highlight at the top of the bar */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   min-height: 10vh;
   min-width: 100%;
@@ -15,7 +14,6 @@ nav {
 
   position: fixed;
   top: 0;
-  //   padding-block: 50px;
   ul {
     display: flex;
     flex-direction: row;
@@ -36,6 +34,7 @@ nav {
       margin-inline: 10px;
       flex-shrink: 0;
       white-space: nowrap;
+      transition: color 200ms ease-in;
     }
   }
 }
@@ -73,11 +72,163 @@ nav {
         width: 40px;
       }
     }
-    ul {
-      display: none;
-    }
   }
 }
 .active {
   display: none;
+}
+nav ul a:not(.button):hover {
+  color: var(--vibrant-blue);
+}
+/* =========================================
+   1. CORE NAVBAR STYLES (Desktop Default)
+   ========================================= */
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Styling */
+  background: rgba(14, 26, 37, 0.95); /* High opacity for legibility */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-inline: 50px;
+  min-height: 10vh;
+  width: 100%;
+
+  /* Positioning */
+  position: fixed;
+  top: 0;
+  z-index: 100; /* High z-index to stay on top */
+}
+
+/* Hide the Checkbox & Hamburger on Desktop */
+.nav-toggle,
+.nav-toggle-label {
+  display: none;
+}
+
+/* Desktop Menu Layout */
+nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+
+  /* Force desktop state explicitly */
+  position: static;
+  transform: none;
+  background: transparent;
+  width: auto;
+  height: auto;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  padding: 20px;
+  transition: color 200ms ease-in;
+  white-space: nowrap;
+}
+
+nav ul a:not(.button):hover {
+  color: var(--vibrant-blue);
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.logo img {
+  width: 60px;
+  border: 1px solid white;
+}
+.logo p {
+  color: white;
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1.1;
+}
+.logo p span {
+  color: var(--vibrant-blue, #00aeef); /* Fallback color added */
+}
+
+/* =========================================
+   2. MOBILE MENU OVERRIDES (Max-width 928px)
+   ========================================= */
+@media (max-width: 928px) {
+  nav {
+    padding-inline: 30px;
+  }
+
+  /* Show the Hamburger Icon */
+  .nav-toggle-label {
+    display: flex; /* Flex allows centering the SVG */
+    align-items: center;
+    cursor: pointer;
+    margin-left: auto; /* Pushes icon to the right if needed */
+  }
+
+  /* Transform the List into a Sliding Drawer */
+  nav ul {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Remove gap, use padding on links instead */
+
+    /* Position: Absolute pulls it out of the flow */
+    position: absolute;
+    top: 100%; /* Starts exactly at bottom of nav */
+    left: 0;
+    width: 100%;
+
+    /* Styling */
+    background: rgba(14, 26, 37, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+
+    /* ANIMATION LOGIC */
+    /* 1. Move it up behind the header */
+    transform: translateY(-150%);
+    /* 2. Put it behind the header visually */
+    z-index: -1;
+    /* 3. Smooth transition */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  /* When Checkbox is Checked -> Slide Down */
+  .nav-toggle:checked ~ ul {
+    transform: translateY(0);
+  }
+
+  /* Mobile Link Styling */
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul a {
+    display: block;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Hide the desktop 'active' indicator if strictly visual */
+  .active {
+    display: block; /* Ensure home link is visible on mobile */
+  }
+  nav ul .button {
+    margin: 20px;
+  }
 }

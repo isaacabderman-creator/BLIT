@@ -48,7 +48,6 @@ nav {
   background-color: var(--dark-teal);
   background: rgba(14, 26, 37, 0.75);
   backdrop-filter: blur(12px);
-  /* Adds a very subtle highlight at the top of the bar */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   min-height: 10vh;
   min-width: 100%;
@@ -78,6 +77,7 @@ nav ul a {
   margin-inline: 10px;
   flex-shrink: 0;
   white-space: nowrap;
+  transition: color 200ms ease-in;
 }
 
 .logo {
@@ -116,14 +116,158 @@ nav ul a {
   nav .logo img {
     width: 40px;
   }
-  nav ul {
-    display: none;
-  }
 }
 .active {
   display: none;
 }
 
+nav ul a:not(.button):hover {
+  color: var(--vibrant-blue);
+}
+
+/* =========================================
+   1. CORE NAVBAR STYLES (Desktop Default)
+   ========================================= */
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* Styling */
+  background: rgba(14, 26, 37, 0.95); /* High opacity for legibility */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-inline: 50px;
+  min-height: 10vh;
+  width: 100%;
+  /* Positioning */
+  position: fixed;
+  top: 0;
+  z-index: 100; /* High z-index to stay on top */
+}
+
+/* Hide the Checkbox & Hamburger on Desktop */
+.nav-toggle,
+.nav-toggle-label {
+  display: none;
+}
+
+/* Desktop Menu Layout */
+nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  /* Force desktop state explicitly */
+  position: static;
+  transform: none;
+  background: transparent;
+  width: auto;
+  height: auto;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  padding: 20px;
+  transition: color 200ms ease-in;
+  white-space: nowrap;
+}
+
+nav ul a:not(.button):hover {
+  color: var(--vibrant-blue);
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo img {
+  width: 60px;
+  border: 1px solid white;
+}
+
+.logo p {
+  color: white;
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1.1;
+}
+
+.logo p span {
+  color: var(--vibrant-blue, #00aeef); /* Fallback color added */
+}
+
+/* =========================================
+   2. MOBILE MENU OVERRIDES (Max-width 928px)
+   ========================================= */
+@media (max-width: 928px) {
+  nav {
+    padding-inline: 30px;
+  }
+  /* Show the Hamburger Icon */
+  .nav-toggle-label {
+    display: flex; /* Flex allows centering the SVG */
+    align-items: center;
+    cursor: pointer;
+    margin-left: auto; /* Pushes icon to the right if needed */
+  }
+  /* Transform the List into a Sliding Drawer */
+  nav ul {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Remove gap, use padding on links instead */
+    /* Position: Absolute pulls it out of the flow */
+    position: absolute;
+    top: 100%; /* Starts exactly at bottom of nav */
+    left: 0;
+    width: 100%;
+    /* Styling */
+    background: rgba(14, 26, 37, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    /* ANIMATION LOGIC */
+    /* 1. Move it up behind the header */
+    transform: translateY(-150%);
+    /* 2. Put it behind the header visually */
+    z-index: -1;
+    /* 3. Smooth transition */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  /* When Checkbox is Checked -> Slide Down */
+  .nav-toggle:checked ~ ul {
+    transform: translateY(0);
+  }
+  /* Mobile Link Styling */
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+  nav ul a {
+    display: block;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  /* Hide the desktop 'active' indicator if strictly visual */
+  .active {
+    display: block; /* Ensure home link is visible on mobile */
+  }
+  nav ul .button {
+    margin: 20px;
+  }
+}
 .button {
   color: white;
   font-weight: 600;
@@ -397,30 +541,27 @@ section {
 .choice .icon {
   width: var(--space-5xl-6xl);
   aspect-ratio: 1/1;
-  border: 20px solid rgba(255, 255, 255, 0.6);
+  border: 20px solid var(--vibrant-blue);
   border-radius: 12px;
   overflow: hidden;
   position: relative;
 }
 .choice .icon-strip {
   display: flex;
-  width: 400%; /* Changed to 400% for 4 items */
+  width: 400%;
   height: 100%;
   animation: infiniteSlide 8s infinite ease-in-out;
 }
 .choice .icon-item {
-  flex: 0 0 25%; /* Each item is now 1/4 of the strip */
+  flex: 0 0 25%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: var(--vibrant-blue);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: 60%;
   mask-size: 60%;
   -webkit-mask-position: center;
   mask-position: center;
-}
-.choice {
-  /* Icons */
 }
 .choice .key {
   -webkit-mask-image: url("../images/key.svg");
@@ -434,30 +575,19 @@ section {
   -webkit-mask-image: url("../images/focus.svg");
   mask-image: url("../images/focus.svg");
 }
-.choice {
-  /* Infinite Loop Animation */
-}
 @keyframes infiniteSlide {
-  /* Start at Icon 1 */
   0%, 20% {
     transform: translateX(0%);
   }
-  /* Slide to Icon 2 */
   25%, 45% {
     transform: translateX(-25%);
   }
-  /* Slide to Icon 3 */
   50%, 70% {
     transform: translateX(-50%);
   }
-  /* Slide to the Duplicate Icon 1 */
   75%, 95% {
     transform: translateX(-75%);
   }
-  /* At 100%, the animation resets to 0% automatically. 
-     Since 95% (Duplicate) looks exactly like 0% (Original), 
-     the reset is invisible.
-  */
   100% {
     transform: translateX(-75%);
   }
@@ -495,7 +625,7 @@ section {
   justify-content: center;
   width: calc(var(--step-2) * 3);
   aspect-ratio: 1/1;
-  background-color: transparent; /* Button Background Color */
+  background-color: transparent;
   border: 5px solid var(--primary-white);
   transition: background-color 0.2s ease;
   border-radius: 12px;
@@ -511,17 +641,13 @@ section {
   scale: 1.02;
 }
 
-/* 4. The Mask (The Magic Part) */
 .icon-mask {
   display: block;
-  width: calc(var(--step-2) * 2); /* Size of the icon inside the button */
+  width: calc(var(--step-2) * 2);
   aspect-ratio: 1/1;
-  /* IMPORTANT: This color becomes the Icon's fill color */
   background-color: #ffffff;
-  /* Define the mask */
   -webkit-mask-image: url("../images/angle-right.svg");
   mask-image: url("../images/angle-right.svg");
-  /* Ensure icon fits and centers */
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;

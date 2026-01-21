@@ -8,7 +8,7 @@
   .icon {
     width: var(--space-5xl-6xl);
     aspect-ratio: 1/1;
-    border: 20px solid rgba(255, 255, 255, 0.6);
+    border: 20px solid var(--vibrant-blue);
     border-radius: 12px;
     overflow: hidden;
     position: relative;
@@ -16,15 +16,15 @@
 
   .icon-strip {
     display: flex;
-    width: 400%; /* Changed to 400% for 4 items */
+    width: 400%;
     height: 100%;
     animation: infiniteSlide 8s infinite ease-in-out;
   }
 
   .icon-item {
-    flex: 0 0 25%; /* Each item is now 1/4 of the strip */
+    flex: 0 0 25%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: var(--vibrant-blue);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-size: 60%;
@@ -33,7 +33,6 @@
     mask-position: center;
   }
 
-  /* Icons */
   .key {
     -webkit-mask-image: url("../images/key.svg");
     mask-image: url("../images/key.svg");
@@ -47,36 +46,27 @@
     mask-image: url("../images/focus.svg");
   }
 
-  /* Infinite Loop Animation */
   @keyframes infiniteSlide {
-    /* Start at Icon 1 */
     0%,
     20% {
       transform: translateX(0%);
     }
 
-    /* Slide to Icon 2 */
     25%,
     45% {
       transform: translateX(-25%);
     }
 
-    /* Slide to Icon 3 */
     50%,
     70% {
       transform: translateX(-50%);
     }
 
-    /* Slide to the Duplicate Icon 1 */
     75%,
     95% {
       transform: translateX(-75%);
     }
 
-    /* At 100%, the animation resets to 0% automatically. 
-     Since 95% (Duplicate) looks exactly like 0% (Original), 
-     the reset is invisible.
-  */
     100% {
       transform: translateX(-75%);
     }
@@ -120,7 +110,7 @@
   justify-content: center;
   width: calc(var(--step-2) * 3);
   aspect-ratio: 1/1;
-  background-color: transparent; /* Button Background Color */
+  background-color: transparent;
   border: 5px solid var(--primary-white);
   transition: background-color 0.2s ease;
   border-radius: 12px;
@@ -136,20 +126,16 @@
   }
 }
 
-/* 4. The Mask (The Magic Part) */
 .icon-mask {
   display: block;
-  width: calc(var(--step-2) * 2); /* Size of the icon inside the button */
+  width: calc(var(--step-2) * 2);
   aspect-ratio: 1/1;
 
-  /* IMPORTANT: This color becomes the Icon's fill color */
   background-color: #ffffff;
 
-  /* Define the mask */
   -webkit-mask-image: url("../images/angle-right.svg");
   mask-image: url("../images/angle-right.svg");
 
-  /* Ensure icon fits and centers */
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;

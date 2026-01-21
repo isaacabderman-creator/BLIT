@@ -12,12 +12,30 @@
         <img src="images/logo_blit.png" alt="Logo BLIT" />
         <p>BE LOYAL <span>IT</span></p>
       </div>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+      <label for="nav-toggle" class="nav-toggle-label">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </label>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li class="active"><a href="solutions.html">Solutions</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Reach Us</a></li>
-        <li><a href="contact.html" class="button">Get a proposal</a></li>
+        <a href="contact.html" class="button">Get a proposal</a>
       </ul>
     </nav>
 
@@ -33,7 +51,7 @@
         </div>
       </section>
 
-      <section class="solution-section">
+      <section class="solution-section" id="network">
         <div class="wrapper split-layout">
           <div class="image-col relative-pos">
             <div class="image-placeholder server-img">
@@ -63,7 +81,7 @@
         </div>
       </section>
       <hr />
-      <section class="solution-section img-right">
+      <section class="solution-section img-right" id="communication">
         <div class="wrapper split-layout reverse-mobile">
           <div class="content-col">
             <h2>Communication & Phone Systems</h2>
@@ -86,7 +104,7 @@
         </div>
       </section>
       <hr />
-      <section class="solution-section">
+      <section class="solution-section" id="event">
         <div class="wrapper split-layout">
           <div class="image-col multi-image-col">
             <div class="image-placeholder sub-img-1">
